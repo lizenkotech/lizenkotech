@@ -90,7 +90,6 @@
   :root {
     scroll-behavior: smooth;
   }
-
 }
 
 body {
@@ -122,25 +121,6 @@ h4,
 h5,
 h6 {
   font-family: "Raleway", sans-serif;
-}
-
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Raleway", sans-serif;
-}
-
-img {
-  vertical-align: middle;
-  border-style: none;
-
-  element.style {
-    width: 100%;
-  }
 }
 
 .h1 {
@@ -362,6 +342,13 @@ figure {
 img,
 svg {
   vertical-align: middle;
+  vertical-align: middle;
+  border-style: none;
+
+  element.style {
+    width: 100%;
+  }
+
 }
 
 table {
