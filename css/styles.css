@@ -91,11 +91,6 @@
     scroll-behavior: smooth;
   }
 
-  .project-image {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-  }
 }
 
 body {
@@ -119,17 +114,35 @@ hr {
   opacity: 0.25;
 }
 
-h6,
-.h6,
-h5,
-.h5,
-h4,
-.h4,
-h3,
-.h3,
-h2,
-.h2,
+body,
 h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+
+  element.style {
+    width: 100%;
+  }
+}
+
 .h1 {
   margin-top: 0;
   margin-bottom: 0.5rem;
