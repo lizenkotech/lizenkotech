@@ -113,6 +113,16 @@ h6 {
     position: sticky;
     top: 0;
     z-index: 1030;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+
+    background: rgba(18, 18, 18, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition: 0.3s ease;
 }
 
 .navbar-brand {
@@ -127,6 +137,7 @@ h6 {
 .nav-link:hover {
     color: var(--primary);
 }
+
 
 /* ==========================================
    Buttons
