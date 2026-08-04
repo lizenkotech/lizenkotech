@@ -113,12 +113,13 @@ background {
 }
 
 .profile-img {
-    width: 140px;
-    height: 140px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
     border-radius: 50%;
     position: relative;
-    z-index: 2;
+    z-index: 0;
+    pointer-events: none;
 }
 
 /* ==========================================
