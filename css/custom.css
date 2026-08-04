@@ -112,6 +112,15 @@ background {
     overflow-x: hidden;
 }
 
+.profile-img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+
 /* ==========================================
    Typography
     ========================================== */
@@ -247,7 +256,8 @@ Hero
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 5;
+    text-align: center;
 }
 
 .hero h1 {
@@ -270,13 +280,6 @@ Hero
     margin-bottom: 2rem;
 }
 
-
-.hero-content {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .hero img {
     width: 180px;
     max-width: 80%;
@@ -288,15 +291,6 @@ Hero
 .hero svg {
     width: 250px;
     opacity: 0.25;
-}
-
-.profile-img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%;
-    position: relative;
-    z-index: 1;
 }
 
 section {
