@@ -69,6 +69,30 @@ body {
 
 .about-text {}
 
+/* About Section */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.about-image {
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(255, 20, 147, 0.3);
+}
+
 /* ==========================================
    Global
 ========================================== */
@@ -279,15 +303,80 @@ section {
 /* ========================================
     Contact
 ======================================== */
-.contact {}
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
 
-.contact-form {}
+.contact-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
 
-.form-group {}
+.contact-item h4 {
+    color: #ff1493;
+    margin-bottom: 1rem;
+}
 
-.submit-btn {}
+/* ==========================================
+        Mobile Responsive
+========================================== */
 
-.submit-btn:hover {}
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-content,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
+}
+
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+.hero-subtext-alt {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-subtext-alt span {
+    color: #ff1493;
+    font-weight: bold;
+}
+
+.about-resident-title {
+    color: #ff1493;
+    margin-bottom: 1rem;
+}
+
+.about-resident-experience {
+    color: #00fa9a;
+    margin-top: 0.5rem;
+    padding-left: 1.2rem;
+}
 
 /* ==========================================
    Footer
@@ -296,6 +385,35 @@ footer {
     background: #111;
     background-color: #222;
     padding: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.social-links a {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #ff1493, #8a2be2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
 }
 
 .social-links {}
@@ -303,6 +421,20 @@ footer {
 .social-links a {}
 
 .social-links a:hover {}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
 /* ==========================================
    Responsive
@@ -364,6 +496,23 @@ button {
 .btn-secondary:hover {
     background: white;
     color: #333;
+}
+
+.submit-btn {
+    background: linear-gradient(45deg, #ff1493, #8a2be2);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: transform 0.3s;
+}
+
+.submit-btn:hover {
+    transform: scale(1.05);
 }
 
 /* ========================================
