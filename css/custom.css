@@ -207,6 +207,11 @@ h6 {
     color: rgb(234, 144, 144);
 }
 
+.hero-buttons {
+    position: relative;
+    z-index: 10;
+}
+
 /* ==========================================
    Cards
 ========================================== */
@@ -265,12 +270,6 @@ Hero
     margin-bottom: 2rem;
 }
 
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
 
 .hero-content {
     top: 50%;
@@ -296,6 +295,8 @@ Hero
     height: 180px;
     object-fit: cover;
     border-radius: 50%;
+    position: relative;
+    z-index: 1;
 }
 
 section {
