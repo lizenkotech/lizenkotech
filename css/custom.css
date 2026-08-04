@@ -3028,6 +3028,7 @@ footer {
 
         .text-gradient {
             background: -webkit-linear-gradient(315deg, #1e30f3 0%, #e21e80 100%);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
