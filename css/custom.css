@@ -280,13 +280,7 @@ Hero
     margin-bottom: 2rem;
 }
 
-.hero img {
-    width: 180px;
-    max-width: 80%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 50%;
-}
+
 
 .hero svg {
     width: 250px;
