@@ -6,7 +6,7 @@ custom.css
    ====================================================== */
 /* ========================================
     General
-======================================== */
+    ======================================== */
 * {
     margin: 0;
     padding: 0;
@@ -15,12 +15,17 @@ custom.css
 
 body {
     font-family: "Plus Jakarta Sans", sans-serif;
+    background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 /* ==========================================
    Portfolio Theme
    Alice Crossman
-========================================== */
+=  ========================================= */
 :root {
     --primary: #00BFFF;
     --secondary: #8A2BE2;
@@ -36,7 +41,7 @@ body {
 
 /* ========================================
      Portfolio
-======================================== */
+    ======================================== */
 
 .project-card {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
@@ -53,7 +58,7 @@ body {
 
 /* ========================================
     About
-======================================== */
+    ======================================== */
 .about {}
 
 .about-content {}
@@ -95,20 +100,25 @@ body {
 
 /* ==========================================
    Global
-========================================== */
+    ========================================== */
 html {
     scroll-behavior: smooth;
 }
 
-body {
-    background: var(--dark);
-    color: var(--white);
+body {}
+
+background {
+    background: #682a9b;
+    background: -webkit-linear-gradient(90deg, rgba(104, 42, 155, 1) 0%, rgba(87, 106, 199, 1) 50%, rgba(237, 83, 196, 1) 100%);
+    background: -moz-linear-gradient(90deg, rgba(104, 42, 155, 1) 0%, rgba(87, 106, 199, 1) 50%, rgba(237, 83, 196, 1) 100%);
+    background: linear-gradient(90deg, rgba(104, 42, 155, 1) 0%, rgba(87, 106, 199, 1) 50%, rgba(237, 83, 196, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#682A9B", endColorstr="#ED53C4", GradientType=1);
     overflow-x: hidden;
 }
 
 /* ==========================================
    Typography
-========================================== */
+    ========================================== */
 h1,
 h2,
 h3,
@@ -128,7 +138,7 @@ h6 {
 
 /* ==========================================
    Navigation
-========================================== */
+    ========================================== */
 .navbar {
     position: sticky;
     top: 0;
@@ -181,7 +191,7 @@ h6 {
 
 /* ==========================================
    Buttons
-========================================== */
+    ========================================== */
 .btn-primary {
     background: var(--gradient);
     border: none;
@@ -198,7 +208,7 @@ h6 {
 
 .btn-outline-dark:hover {
     background: var(--primary);
-    color: white;
+    color: rgb(234, 144, 144);
 }
 
 /* ==========================================
@@ -565,12 +575,4 @@ button {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-}
-
-background {
-    background: #682a9b;
-    background: -webkit-linear-gradient(90deg, rgba(104, 42, 155, 1) 0%, rgba(87, 106, 199, 1) 50%, rgba(237, 83, 196, 1) 100%);
-    background: -moz-linear-gradient(90deg, rgba(104, 42, 155, 1) 0%, rgba(87, 106, 199, 1) 50%, rgba(237, 83, 196, 1) 100%);
-    background: linear-gradient(90deg, rgba(104, 42, 155, 1) 0%, rgba(87, 106, 199, 1) 50%, rgba(237, 83, 196, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#682A9B", endColorstr="#ED53C4", GradientType=1);
 }
