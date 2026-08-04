@@ -16,10 +16,6 @@ custom.css
 body {
     font-family: "Plus Jakarta Sans", sans-serif;
     background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
-    color: #fff;
-    text-align: center;
-    margin: 0;
-    padding: 0;
 }
 
 /* ==========================================
