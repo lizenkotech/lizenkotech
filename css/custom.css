@@ -115,7 +115,6 @@ background {
 /* ==========================================
    profile
     ========================================== */
-
 .profile {
     position: relative;
     z-index: 1;
@@ -124,10 +123,10 @@ background {
 .profile-img {
     width: 180px;
     height: 180px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 50%;
     position: relative;
-    z-index: 5;
+    z-index: 2;
 }
 
 .dots-1,
@@ -261,19 +260,16 @@ h6 {
 Hero
 ======================================== */
 .hero {
-    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     width: 100%;
     min-height: 100vh;
+    overflow: hidden;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 10;
-}
+
 
 .hero h1 {
     font-size: 4rem;
@@ -492,6 +488,7 @@ button {
     transition: transform 0.3s;
     animation: pulse 2s infinite;
 }
+
 
 .btn-secondary {
     border: 2px solid white;
