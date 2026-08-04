@@ -1,8 +1,25 @@
 custom.css
+
 /* ======================================================
    Portfolio Website
    Author: Alice Crossman
    ====================================================== */
+/* ==========================================
+   Portfolio Theme
+   Alice Crossman
+========================================== */
+:root {
+    --primary: #00BFFF;
+    --secondary: #8A2BE2;
+    --accent: #FF4DA6;
+    --dark: #121212;
+    --dark-light: #1E1E1E;
+    --white: #FFFFFF;
+    --gray: #B8B8B8;
+    --gradient: linear-gradient(135deg,
+            var(--primary),
+            var(--secondary));
+}
 
 /* ========================================
      Portfolio
@@ -19,23 +36,6 @@ custom.css
 .project-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 18px 36px rgba(0, 0, 0, 0.6);
-}
-
-/* ==========================================
-   Portfolio Theme
-   Alice Crossman
-========================================== */
-:root {
-    --primary: #00BFFF;
-    --secondary: #8A2BE2;
-    --accent: #FF4DA6;
-    --dark: #121212;
-    --dark-light: #1E1E1E;
-    --white: #FFFFFF;
-    --gray: #B8B8B8;
-    --gradient: linear-gradient(135deg,
-            var(--primary),
-            var(--secondary));
 }
 
 /* ==========================================
