@@ -103,6 +103,30 @@ body {
     --bs-highlight-bg: #fff3cd;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:not(svg) {
+    transform-origin: 0px 0px;
+}
+
+g[Attributes] Style {
+    transform: translate(0, 1280) scale(0.1, -0.1);
+}
+
+:not(svg) {
+    transform-origin: 0px 0px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
     :root {
         scroll-behavior: smooth;
@@ -630,6 +654,15 @@ footer {
     }
 }
 
+.profile .dots-2 svg {
+    fill: #1e30f3;
+}
+
+.g-5,
+.gx-5 {
+    --bs-gutter-x: 3rem;
+}
+
 /* ==========================================
    Responsive
 ========================================== */
@@ -639,164 +672,238 @@ footer {
     }
 }
 
-/* ========================================
+@media (min-width: 576px) {
+
+    .container-sm,
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .container-xl,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    .container-xxl,
+    .container-xl,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 1320px;
+    }
+}
+
+@media (min-width: 576px) {
+    .col-sm {
+        flex: 1 0 0%;
+    }
+
+    @media (min-width: 768px) {
+        .col-md {
+            flex: 1 0 0%;
+        }
+
+        @media (min-width: 992px) {
+            .col-lg {
+                flex: 1 0 0%;
+            }
+
+            @media (min-width: 1200px) {
+                .col-xl {
+                    flex: 1 0 0%;
+                }
+
+                /* ========================================
    buttons
 ======================================== */
-button:hover {
-    background-color: #ff6699;
-}
+                button:hover {
+                    background-color: #ff6699;
+                }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #ff3366;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
+                button {
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    background-color: #ff3366;
+                    color: #fff;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    margin-top: 10px;
+                }
 
-.cta-btn {
-    background: linear-gradient(45deg, #ff1493, #8a2be2);
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    color: white;
-    transition: transform 0.3s;
-}
+                .cta-btn {
+                    background: linear-gradient(45deg, #ff1493, #8a2be2);
+                    padding: 10px 20px;
+                    border-radius: 25px;
+                    text-decoration: none;
+                    color: white;
+                    transition: transform 0.3s;
+                }
 
-.btn-primary {
-    background: linear-gradient(45deg, #ff1493, #8a2be2);
-    padding: 15px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: transform 0.3s;
-    animation: pulse 2s infinite;
-}
+                .btn-primary {
+                    background: linear-gradient(45deg, #ff1493, #8a2be2);
+                    padding: 15px 30px;
+                    border-radius: 30px;
+                    text-decoration: none;
+                    color: white;
+                    font-weight: bold;
+                    transition: transform 0.3s;
+                    animation: pulse 2s infinite;
+                }
 
 
-.btn-secondary {
-    border: 2px solid white;
-    padding: 15px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: all 0.3s;
-}
+                .btn-secondary {
+                    border: 2px solid white;
+                    padding: 15px 30px;
+                    border-radius: 30px;
+                    text-decoration: none;
+                    color: white;
+                    font-weight: bold;
+                    transition: all 0.3s;
+                }
 
-.btn-secondary:hover {
-    background: white;
-    color: #333;
-}
+                .btn-secondary:hover {
+                    background: white;
+                    color: #333;
+                }
 
-.submit-btn {
-    background: linear-gradient(45deg, #ff1493, #8a2be2);
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 30px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-    transition: transform 0.3s;
-}
+                .submit-btn {
+                    background: linear-gradient(45deg, #ff1493, #8a2be2);
+                    color: white;
+                    padding: 15px 30px;
+                    border: none;
+                    border-radius: 30px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    width: 100%;
+                    transition: transform 0.3s;
+                }
 
-.submit-btn:hover {
-    transform: scale(1.05);
-}
+                .submit-btn:hover {
+                    transform: scale(1.05);
+                }
 
-/* ========================================
+                /* ========================================
    Services
 ======================================== */
-.services {}
+                .services {}
 
-.service-card {}
+                .service-card {}
 
-.service-card:hover {}
+                .service-card:hover {}
 
 
 
-/* ========================================
+                /* ========================================
    Resume
 ======================================== */
-.resume {}
+                .resume {}
 
-/* ========================================
+                /* ========================================
     Animations
 ======================================== */
-@keyframes pulse {}
+                @keyframes pulse {}
 
-@keyframes gradient {}
+                @keyframes gradient {}
 
-/* Social Links */
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 2rem 0;
-}
+                /* Social Links */
+                .social-links {
+                    display: flex;
+                    justify-content: center;
+                    gap: 2rem;
+                    margin: 2rem 0;
+                }
 
-/* Sections */
-section:not(.hero) {
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ff3366;
-    border-radius: 10px;
-    max-width: 800px;
-}
+                /* Sections */
+                section:not(.hero) {
+                    margin: 20px auto;
+                    padding: 20px;
+                    border: 1px solid #ff3366;
+                    border-radius: 10px;
+                    max-width: 800px;
+                }
 
-.section h2 {
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 3rem;
-}
+                .section h2 {
+                    font-size: 3rem;
+                    text-align: center;
+                    margin-bottom: 3rem;
+                }
 
-.section h2 span {
-    background: linear-gradient(45deg, #ff1493, #8a2be2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
+                .section h2 span {
+                    background: linear-gradient(45deg, #ff1493, #8a2be2);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                }
 
-.profile,
-.profile-img,
-.dots-1,
-.dots-2,
-.dots-3 {
-    pointer-events: none !important;
-}
+                .profile,
+                .profile-img,
+                .dots-1,
+                .dots-2,
+                .dots-3 {
+                    pointer-events: none !important;
+                }
 
-.btn-primary {
-    position: relative;
-    z-index: 9999 !important;
-    pointer-events: auto !important;
-}
+                .btn-primary {
+                    position: relative;
+                    z-index: 9999 !important;
+                    pointer-events: auto !important;
+                }
 
-/* Fix profile overlapping buttons */
-.profile {
-    position: relative;
-    z-index: 1;
-}
+                /* Fix profile overlapping buttons */
+                .profile {
+                    position: relative;
+                    z-index: 1;
+                }
 
-.profile-img {
-    width: 180px !important;
-    height: 180px !important;
-    position: relative;
-    z-index: 1;
-}
+                .profile-img {
+                    width: 180px !important;
+                    height: 180px !important;
+                    position: relative;
+                    z-index: 1;
+                }
 
-.hero .row {
-    position: relative;
-    z-index: 5;
-}
+                .hero .row {
+                    position: relative;
+                    z-index: 5;
+                }
 
-.hero .btn {
-    position: relative;
-    z-index: 9999;
-    pointer-events: auto;
+                .hero .btn {
+                    position: relative;
+                    z-index: 9999;
+                    pointer-events: auto;
+                }
+            }
+        }
+    }
 }
