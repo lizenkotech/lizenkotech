@@ -108,21 +108,19 @@ h6 {
 /* ==========================================
    Navigation
 ========================================== */
+/* ==========================================
+Navigation
+========================================== */
 .navbar {
-    transition: .3s;
     position: sticky;
     top: 0;
-    z-index: 1030;
-    top: 0;
-    left: 0;
-    width: 100%;
     z-index: 1030;
 
     background: rgba(18, 18, 18, 0.75);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 
-    transition: 0.3s ease;
+    border-bottom: 1px solid rgba(0, 191, 255, 0.25);
 }
 
 .navbar-nav {
@@ -130,11 +128,6 @@ h6 {
     flex-direction: row;
     gap: 20px;
     align-items: center;
-}
-
-.navbar-brand {
-    font-weight: 700;
-    letter-spacing: 1px;
 }
 
 .nav-link {
