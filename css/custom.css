@@ -125,6 +125,13 @@ h6 {
     transition: 0.3s ease;
 }
 
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
 .navbar-brand {
     font-weight: 700;
     letter-spacing: 1px;
