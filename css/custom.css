@@ -88,6 +88,9 @@ h6 {
 ========================================== */
 .navbar {
     transition: .3s;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
 }
 
 .navbar-brand {
@@ -102,6 +105,8 @@ h6 {
 .nav-link:hover {
     color: var(--primary);
 }
+
+
 
 /* ==========================================
    Buttons
@@ -173,20 +178,7 @@ h6 {
     font-family: "Raleway", sans-serif;
 }
 
-/* ========================================
-   3. Navigation
-======================================== */
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1030;
-}
 
-.navbar-brand {}
-
-.nav-link {}
-
-.nav-link:hover {}
 
 /* ========================================
    4. Hero
