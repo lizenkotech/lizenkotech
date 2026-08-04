@@ -340,6 +340,32 @@ button {
     transition: transform 0.3s;
 }
 
+.btn-primary {
+    background: linear-gradient(45deg, #ff1493, #8a2be2);
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.3s;
+    animation: pulse 2s infinite;
+}
+
+.btn-secondary {
+    border: 2px solid white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: #333;
+}
+
 /* ========================================
    Services
 ======================================== */
