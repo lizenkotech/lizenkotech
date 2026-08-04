@@ -207,6 +207,13 @@ Hero
     opacity: 0.25;
 }
 
+.profile-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 /* ========================================
     Contact
 ======================================== */
