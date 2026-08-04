@@ -8,5 +8,13 @@
     "dropup",
     "textareas",
     "zindex"
-  ]
+  ],
+  "cSpell.customDictionaries": {
+    "custom-dictionary-workspace": {
+      "name": "custom-dictionary-workspace",
+      "path": "${workspaceFolder:startbootstrap-personal-gh-pages}/.cspell/custom-dictionary-workspace.txt",
+      "addWords": true,
+      "scope": "workspace"
+    }
+  }
 }
