@@ -927,9 +927,6 @@ blockquote-footer {
 /* ========================================
     About
     ======================================== */
-.about {}
-
-.about-content {}
 
 .about-image {
     width: 100px;
@@ -940,7 +937,6 @@ blockquote-footer {
     height: auto;
 }
 
-.about-text {}
 
 /* About Section */
 .about-content {
@@ -973,7 +969,6 @@ html {
     scroll-behavior: smooth;
 }
 
-body {}
 
 background {
     background: #682a9b;
@@ -2937,25 +2932,14 @@ footer {
                         /* ========================================
    Services
 ======================================== */
-                        .services {}
-
-                        .service-card {}
-
-                        .service-card:hover {}
-
-
 
                         /* ========================================
    Resume
 ======================================== */
-                        .resume {}
 
                         /* ========================================
     Animations
 ======================================== */
-                        @keyframes pulse {}
-
-                        @keyframes gradient {}
 
                         /* Social Links */
                         .social-links {
