@@ -4,6 +4,19 @@ custom.css
    Portfolio Website
    Author: Alice Crossman
    ====================================================== */
+/* ========================================
+    General
+======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
 /* ==========================================
    Portfolio Theme
    Alice Crossman
@@ -146,18 +159,7 @@ footer {
     }
 }
 
-/* ========================================
-   1. General
-======================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    font-family: "Plus Jakarta Sans", sans-serif;
-}
 
 /* ========================================
    2. Typography
