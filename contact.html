@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Portfolio website for showcasing projects and contact information." />
-    <meta name="author" content="Alice Crossman" />
-    <title>Contact | Alice Crossman</title>
+    <meta name="description" content="Contact LIZENKO.tech for web development services and projects." />
+    <meta name="author" content="LIZENKO" />
+    <title>Contact | LIZENKO.tech</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/portfolio.png" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Custom Google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,7 +29,7 @@
             <div class="container px-5">
                 <a class="navbar-brand" href="index.html">
                     <span class="fw-bolder text-primary">
-                        Alice Crossman
+                        LIZENKO.tech
                     </span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -39,8 +39,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -57,79 +57,64 @@
                         <h1 class="fw-bolder">Start Your Next Project</h1>
 
                         <p class="lead fw-normal text-muted mb-0">
-                            Whether you need a business website, portfolio, or Flutter app,
+                            Whether you need a business website, portfolio, or web application,
                             I'm here to help.
                         </p>
                         <p class="lead fw-normal text-muted mb-0">Let's work together!</p>
                     </div>
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-8 col-xl-6">
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- * * SB Forms Contact Form * *-->
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- This form is pre-integrated with SB Forms.-->
-                            <!-- To make this form functional, sign up at-->
-                            <!-- https://startbootstrap.com/solution/contact-forms-->
-                            <!-- to get an API token!-->
-                            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <!-- Contact Form with Custom JavaScript Function-->
+                            <form id="contactForm" onsubmit="handleContactFormSubmit(event)">
                                 <!-- Name input-->
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="name" type="text" placeholder="Enter your name..."
-                                        data-sb-validations="required" />
+                                    <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
                                     <label for="name">Full name</label>
-                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.
-                                    </div>
+                                    <div class="invalid-feedback" id="nameError">A name is required.</div>
                                 </div>
                                 <!-- Email address input-->
                                 <div class="form-floating mb-3">
                                     <input class="form-control" id="email" type="email" placeholder="name@example.com"
-                                        data-sb-validations="required,email" />
+                                        required />
                                     <label for="email">Email address</label>
-                                    <div class="invalid-feedback" data-sb-feedback="email:required">An email is
-                                        required.</div>
-                                    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.
-                                    </div>
+                                    <div class="invalid-feedback" id="emailError">A valid email is required.</div>
                                 </div>
                                 <!-- Phone number input-->
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
-                                        data-sb-validations="required" />
-                                    <label for="phone">Phone number</label>
-                                    <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is
-                                        required.</div>
+                                    <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" />
+                                    <label for="phone">Phone number (optional)</label>
                                 </div>
                                 <!-- Message input-->
                                 <div class="form-floating mb-3">
                                     <textarea class="form-control" id="message" type="text"
-                                        placeholder="Enter your message here..." style="height: 10rem"
-                                        data-sb-validations="required"></textarea>
+                                        placeholder="Enter your message here..." style="height: 10rem" required></textarea>
                                     <label for="message">Message</label>
-                                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is
-                                        required.</div>
+                                    <div class="invalid-feedback" id="messageError">A message is required.</div>
                                 </div>
                                 <!-- Submit success message-->
-                                <!---->
-                                <!-- This is what your users will see when the form-->
-                                <!-- has successfully submitted-->
                                 <div class="d-none" id="submitSuccessMessage">
-                                    <div class="text-center mb-3">
-                                        <div class="fw-bolder">Form submission successful!</div>
-                                        To activate this form, sign up at
-                                        <br />
-                                        <a
-                                            href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                    <div class="text-center mb-3 p-4 bg-success bg-opacity-10 rounded-4 border border-success">
+                                        <div class="feature bg-success bg-gradient text-white rounded-3 mb-3 mx-auto d-inline-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                                            <i class="bi bi-check-lg fs-4"></i>
+                                        </div>
+                                        <div class="fw-bolder text-success mb-2">Message sent successfully!</div>
+                                        <p class="text-muted mb-3">Thank you for reaching out. I'll get back to you soon.</p>
+                                        <button class="btn btn-success btn-sm px-4 py-2" onclick="resetContactForm()">Send another message</button>
                                     </div>
                                 </div>
                                 <!-- Submit error message-->
-                                <!---->
-                                <!-- This is what your users will see when there is-->
-                                <!-- an error submitting the form-->
                                 <div class="d-none" id="submitErrorMessage">
-                                    <div class="text-center text-danger mb-3">Error sending message!</div>
+                                    <div class="text-center mb-3 p-4 bg-danger bg-opacity-10 rounded-4 border border-danger">
+                                        <div class="feature bg-danger bg-gradient text-white rounded-3 mb-3 mx-auto d-inline-flex justify-content-center align-items-center" style="width: 60px; height: 60px;">
+                                            <i class="bi bi-x-lg fs-4"></i>
+                                        </div>
+                                        <div class="fw-bolder text-danger mb-2">Error sending message</div>
+                                        <p class="text-muted mb-0">Please check your information and try again.</p>
+                                    </div>
                                 </div>
                                 <!-- Submit Button-->
-                                <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton"
-                                        type="submit">Submit</button></div>
+                                <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton"
+                                        type="submit">Send</button></div>
                             </form>
                         </div>
                     </div>
@@ -142,14 +127,16 @@
         <div class="container px-5">
             <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                 <div class="col-auto">
-                    <div class="small m-0">Copyright &copy; Alice Crossman 2023</div>
+                    <div class="small m-0">Copyright &copy; LIZENKO.tech 2026</div>
                 </div>
                 <div class="col-auto">
-                    <a class="small" href="#!">Privacy</a>
+                    <a class="small" href="index.html">Home</a>
                     <span class="mx-1">&middot;</span>
-                    <a class="small" href="#!">Terms</a>
+                    <a class="small" href="skills.html">Skills</a>
                     <span class="mx-1">&middot;</span>
-                    <a class="small" href="#!">Contact</a>
+                    <a class="small" href="projects.html">Portfolio</a>
+                    <span class="mx-1">&middot;</span>
+                    <a class="small" href="contact.html">Contact</a>
                 </div>
             </div>
         </div>
