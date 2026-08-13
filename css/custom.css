@@ -3670,6 +3670,13 @@ label[for="message"] {
     display: none;
 }
 
+/* Hide decorative SVG dots */
+.dots-1,
+.dots-2,
+.dots-3 {
+    display: none;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
