@@ -64,8 +64,9 @@
                     </div>
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-8 col-xl-6">
-                            <!-- Contact Form with Custom JavaScript Function-->
-                            <form id="contactForm" onsubmit="handleContactFormSubmit(event)">
+                            <!-- Contact Form with Custom JavaScript Function (data-netlify for Netlify Forms)-->
+                            <form id="contactForm" name="contact" method="POST" data-netlify="true" onsubmit="handleContactFormSubmit(event)">
+                                <input type="hidden" name="form-name" value="contact" />
                                 <!-- Name input-->
                                 <div class="form-floating mb-3">
                                     <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
