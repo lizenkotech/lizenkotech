@@ -552,7 +552,7 @@ blockquote-footer {
     margin-top: -1rem;
     margin-bottom: 1rem;
     font-size: 0.875em;
-    color: #6c757d;
+    color: #5b7892;
 }
 
 .blockquote-footer::before {
@@ -584,7 +584,7 @@ blockquote-footer {
 
 .figure-caption {
     font-size: 0.875em;
-    color: #6c757d;
+    color: #389ef7;
 }
 
 .container,
@@ -3653,6 +3653,7 @@ label[for="message"] {
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
