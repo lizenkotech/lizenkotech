@@ -1,380 +1,110 @@
 /*
   =====================================================
-  LIZENKO.tech — Custom Stylesheet (Part 3)
+  LIZENKO.tech — Custom Stylesheet (Part 4)
+  Responsive, animations, print, nav scroll effect
   =====================================================
 */
 
 /* =====================================================
-   11. SKILLS PAGE STYLES
+   15. NAVBAR SCROLL EFFECT
    ===================================================== */
-
-.skill-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-purple);
-    border-radius: 16px;
-    box-shadow: var(--shadow-card);
-    transition: all var(--transition-smooth);
-    overflow: hidden;
-}
-.skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-purple);
-    border-color: var(--purple);
-}
-.skill-card-icon {
-    width: 62px;
-    height: 62px;
-    border-radius: 14px;
-    background: var(--gradient-hero);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    font-size: 1.5rem;
-    box-shadow: var(--shadow-purple);
-    transition: all var(--transition-fast);
-}
-.skill-card:hover .skill-card-icon {
-    transform: scale(1.1) rotate(-4deg);
-    box-shadow: var(--shadow-strong);
-}
-.skill-card-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 0.25rem;
-}
-.skill-card-subtitle {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-.skill-card-tech-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 0.75rem;
-}
-.skill-card-tech-list .skill-badge {
-    font-size: 0.78rem;
-    padding: 0.2rem 0.7rem;
-}
-.skill-card-body {
-    color: var(--text-light);
-    font-size: 0.94rem;
-    line-height: 1.7;
-}
-
-.skill-badge {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    background: rgba(255,47,168,0.08);
-    border: 1px solid rgba(255,47,168,0.20);
-    border-radius: 6px;
-    color: var(--pink);
-    font-size: 0.78rem;
-    font-weight: 600;
-    transition: all var(--transition-fast);
-}
-.skill-badge:hover {
-    background: rgba(255,47,168,0.14);
-    border-color: var(--pink);
-    color: var(--text-primary);
-}
-
-/* Service card */
-.service-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-purple);
-    border-radius: 16px;
-    box-shadow: var(--shadow-card);
-    transition: all var(--transition-smooth);
-}
-.service-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-purple);
-    border-color: var(--purple);
-}
-.service-card-title {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 0.4rem;
-}
-.service-card-desc {
-    color: var(--text-light);
-    font-size: 0.93rem;
-    line-height: 1.7;
-}
-
-/* Skill grid items */
-.skill-grid-item {
-    background: rgba(139,44,255,0.04);
-    border: 1px solid var(--border-light);
-    border-radius: 10px;
-    padding: 0.9rem 1.1rem;
-    color: var(--text-light);
-    font-weight: 500;
-    font-size: 0.93rem;
-    transition: all var(--transition-fast);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-.skill-grid-item:hover {
-    background: rgba(139,44,255,0.08);
-    border-color: var(--purple);
-    color: var(--purple);
-    transform: translateY(-2px);
-}
-.skill-grid-item .bi { color: var(--purple); font-size: 0.95rem; }
-
-/* =====================================================
-   12. PROJECTS PAGE STYLES
-   ===================================================== */
-.project-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-light);
-    border-radius: 16px;
-    box-shadow: var(--shadow-card);
-    overflow: hidden;
-    transition: all var(--transition-smooth);
-}
-.project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-strong);
-    border-color: var(--purple);
-}
-.project-card-image-wrapper {
-    position: relative;
-    overflow: hidden;
-    min-height: 180px;
-    background: var(--bg-elevated);
-    border-bottom: 1px solid var(--border-light);
-}
-.project-card-image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform var(--transition-smooth);
-}
-.project-card:hover .project-card-image-wrapper img {
-    transform: scale(1.04);
-}
-.project-card-image-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--gradient-card);
-    opacity: 0;
-    transition: opacity var(--transition-smooth);
-    pointer-events: none;
-}
-.project-card:hover .project-card-image-wrapper::after {
-    opacity: 1;
-}
-.project-card-content {
-    padding: 1.4rem;
-}
-.project-card-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.45rem;
-}
-.project-card-title .project-icon { font-size: 1.3rem; }
-.project-card-desc {
-    color: var(--text-light);
-    font-size: 0.93rem;
-    line-height: 1.65;
-    margin-bottom: 0.7rem;
-}
-.project-card-tech {
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.2px;
-}
-.project-card-tech span { color: var(--purple); font-weight: 600; }
-
-/* CTA section (gradient background) */
-.cta-section {
-    background: var(--gradient-hero);
-    padding: 4.5rem 0;
-    position: relative;
-    overflow: hidden;
-}
-.cta-section::before {
-    content: '';
-    position: absolute;
-    top: -40%;
-    right: -15%;
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-}
-.cta-section::after {
-    content: '';
-    position: absolute;
-    bottom: -30%;
-    left: -10%;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-}
-.cta-section h2 {
-    font-size: 2.35rem;
-    font-weight: 800;
-    color: var(--white);
-    margin-bottom: 0.8rem;
-    letter-spacing: -0.5px;
-    position: relative;
-    z-index: 1;
-}
-.cta-section .lead {
-    color: rgba(255,255,255,0.88);
-    font-size: 1.1rem;
-    max-width: 520px;
-    margin: 0 auto 2rem;
-    line-height: 1.7;
-    position: relative;
-    z-index: 1;
-}
-.cta-section .btn-cta { position: relative; z-index: 1; }
-
-/* =====================================================
-   13. CONTACT PAGE STYLES
-   ===================================================== */
-.contact-section { padding: 4.5rem 0; }
-.contact-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-light);
-    border-radius: 18px;
-    box-shadow: var(--shadow-card);
-    padding: 2.5rem;
-    transition: all var(--transition-smooth);
-}
-.contact-card:hover {
-    border-color: var(--border-hover);
-    box-shadow: var(--shadow-purple);
-}
-.contact-header-icon {
-    width: 54px;
-    height: 54px;
-    border-radius: 14px;
-    background: var(--gradient-hero);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-    font-size: 1.4rem;
-    margin: 0 auto 1.5rem;
-    box-shadow: var(--shadow-purple);
-    transition: all var(--transition-fast);
-}
-.contact-header-icon:hover {
-    transform: scale(1.08) rotate(-4deg);
-    box-shadow: var(--shadow-strong);
-}
-.contact-title {
-    font-size: 1.85rem;
-    font-weight: 800;
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-    text-align: center;
-    letter-spacing: -0.5px;
-}
-.contact-subtitle {
-    color: var(--text-light);
-    font-size: 0.95rem;
-    text-align: center;
-    line-height: 1.65;
-    margin-bottom: 0.4rem;
-}
-
-/* Form controls */
-.form-control {
-    background: rgba(255,255,255,0.92);
-    border: 1px solid var(--border-light);
-    color: var(--text-primary);
-    border-radius: 10px;
-    padding: 0.8rem 1rem;
-    font-size: 0.95rem;
-    font-family: var(--font-family);
-    transition: all var(--transition-fast);
-}
-.form-control::placeholder {
-    color: var(--text-muted);
-    opacity: 0.6;
-}
-.form-control:focus {
-    background: var(--bg-white);
-    border-color: var(--purple);
-    box-shadow: 0 0 0 3px rgba(139,44,255,0.12);
-    color: var(--text-primary);
-}
-.form-control:hover { border-color: var(--border-hover); }
-textarea.form-control { resize: vertical; min-height: 110px; }
-
-.form-floating > label {
-    color: var(--text-muted);
-    font-size: 0.88rem;
-    font-weight: 500;
-}
-.form-floating > .form-control:focus ~ label,
-.form-floating > .form-control:not(:placeholder-shown) ~ label {
-    color: var(--text-light);
-}
-.form-floating > .form-control:focus,
-.form-floating > .form-control:not(:placeholder-shown) {
-    border-color: var(--border-hover);
-    box-shadow: 0 0 0 3px rgba(139,44,255,0.10);
-}
-.form-floating > .form-control::placeholder {
-    color: var(--text-muted);
-    opacity: 0.5;
-}
-
-.invalid-feedback {
-    color: var(--pink);
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-.was-validated .form-control:invalid,
-.form-control.is-invalid {
-    border-color: var(--pink);
-    background: rgba(255,47,168,0.03);
-}
-.was-validated .form-control:invalid:focus,
-.form-control.is-invalid:focus {
-    box-shadow: 0 0 0 3px rgba(255,47,168,0.12);
+.navbar.scrolled {
+    background: rgba(255,255,255,0.97) !important;
+    border-bottom-color: rgba(139,44,255,0.20) !important;
+    box-shadow: 0 2px 12px rgba(139,44,255,0.06);
 }
 
 /* =====================================================
-   14. FOOTER
+   16. RESPONSIVE / MEDIA QUERIES
    ===================================================== */
-footer {
-    background: var(--bg-white);
-    border-top: 1px solid var(--border-light);
-    padding: 1.4rem 0;
-    margin-top: auto;
+
+/* Tablet */
+@media (max-width: 991.98px) {
+    .hero-heading { font-size: 2.4rem; }
+    .section-title { font-size: 1.75rem; }
+    .cta-section h2 { font-size: 1.85rem; }
+    .contact-title { font-size: 1.5rem; }
+    .navbar-brand { font-size: 1.2rem; }
+    .card-profile { max-width: 190px; }
 }
-footer .small { color: var(--text-muted); font-size: 0.82rem; }
-footer .small a {
-    color: var(--text-light);
-    font-weight: 500;
-    transition: color var(--transition-fast);
+
+/* Mobile */
+@media (max-width: 767.98px) {
+    .hero-heading { font-size: 1.95rem; letter-spacing: -0.5px; }
+    .hero-subtitle { font-size: 1.05rem; }
+    .hero-lead { font-size: 0.95rem; }
+    .section-title { font-size: 1.5rem; }
+    .section { padding: 3.25rem 0; }
+    .cta-section { padding: 3.25rem 0; }
+    .cta-section h2 { font-size: 1.5rem; }
+    .contact-card { padding: 1.5rem; }
+    .contact-title { font-size: 1.35rem; }
+    .btn-hero-primary,
+    .btn-hero-outline,
+    .btn-submit,
+    .btn-cta {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.93rem;
+        width: 100%;
+    }
+    .hero-buttons { flex-direction: column; align-items: stretch; }
+    .card-profile { max-width: 165px; }
+    .card-profile .card-icon { font-size: 2.6rem; }
+    footer { padding: 1.1rem 0; }
+    footer .d-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+    }
 }
-footer .small a:hover { color: var(--purple); }
-footer .mx-1 { color: var(--border-medium); }
+
+/* Small mobile */
+@media (max-width: 425.98px) {
+    .hero-heading { font-size: 1.6rem; }
+    .section-title { font-size: 1.3rem; }
+    .navbar-brand { font-size: 1.05rem; }
+    .navbar-collapse { padding-top: 0.6rem; }
+    .navbar-nav .nav-link { padding: 0.4rem 0.65rem; font-size: 0.85rem; }
+    .card-profile { max-width: 145px; }
+    .card-profile .card-body { padding: 0.9rem; }
+}
+
+/* =====================================================
+   17. ANIMATIONS
+   ===================================================== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 18px rgba(139,44,255,0.18); }
+    50% { box-shadow: 0 0 32px rgba(139,44,255,0.30); }
+}
+.fade-in-section { animation: fadeIn 0.5s ease forwards; }
+.slide-up-section { animation: slideUp 0.5s ease forwards; }
+
+/* =====================================================
+   18. PRINT STYLES
+   ===================================================== */
+@media print {
+    body { background: white; color: black; }
+    .navbar, footer, .btn, .hero-buttons,
+    .card-profile .card-social, .profile-container { display: none !important; }
+    .section, .card, .contact-card {
+        box-shadow: none !important;
+        border-color: #ddd !important;
+        background: white !important;
+    }
+    .text-gradient, .bg-gradient-hero, .bg-gradient-tri,
+    .badge.bg-gradient-hero, .badge.bg-gradient-tri {
+        background: none !important;
+        -webkit-background-clip: none !important;
+        color: #333 !important;
+        -webkit-text-fill-color: #333 !important;
+    }
+}
