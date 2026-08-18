@@ -1,234 +1,381 @@
 /*
   =====================================================
-  LIZENKO.tech — Custom Stylesheet (Part 4)
-  Responsive, animations, print, nav scroll effect
+  LIZENKO.tech — Custom Stylesheet v2
+  Author: LIZENKO
+  Design: Light, bright, feminine — Purple + Pink dominant
+  Brand: #8B2CFF · #FF2FA8 · #5B3CFF
+  Supporting: blue/turquoise accents
   =====================================================
 */
 
 /* =====================================================
-   15. NAVBAR SCROLL EFFECT
+   1. CSS CUSTOM PROPERTIES
    ===================================================== */
-.navbar.scrolled {
-    background: rgba(255, 255, 255, 0.97) !important;
-    border-bottom-color: rgba(139, 44, 255, 0.20) !important;
-    box-shadow: 0 2px 12px rgba(139, 44, 255, 0.06);
+:root {
+    /* --- Brand Colors (fixed) --- */
+    --purple: #8B2CFF;
+    --pink: #FF2FA8;
+    --violet-blue: #5B3CFF;
+
+    /* --- Supporting Accents --- */
+    --blue-accent: #4DA6FF;
+    --turquoise-accent: #45D9C8;
+
+    /* --- Backgrounds — soft, light, with purple/pink presence --- */
+    --bg-white: #FFFFFF;
+    --bg-soft-purple: #F8F4FE;
+    --bg-soft-pink: #FFF5FC;
+    --bg-light-purple: #F0E8FF;
+    --bg-light-pink: #FFE8F5;
+    --bg-elevated: #F5F0FA;
+    --bg-card: #FFFFFF;
+    --bg-section-alt: #F7F0FE;
+    --bg-soft-gradient: linear-gradient(135deg, #F8F4FE 0%, #FFE8F5 100%);
+
+    /* --- Text --- */
+    --text-primary: #2D1B4E;
+    --text-body: #4A3866;
+    --text-muted: #8B7BAA;
+    --text-light: #7B6B9E;
+    --white: #FFFFFF;
+
+    /* --- Purple/Pink Gradients (dominant) --- */
+    --gradient-hero: linear-gradient(135deg, #8B2CFF 0%, #FF2FA8 100%);
+    --gradient-violet-purple: linear-gradient(135deg, #5B3CFF, #8B2CFF);
+    --gradient-tri: linear-gradient(135deg, #5B3CFF, #8B2CFF, #FF2FA8);
+    --gradient-footer: linear-gradient(135deg, #8B2CFF 0%, #FF2FA8 50%, #5B3CFF 100%);
+    --gradient-card: linear-gradient(135deg, rgba(139,44,255,0.06), rgba(255,47,168,0.04));
+    --gradient-soft-purple-pink: linear-gradient(135deg, rgba(139,44,255,0.08), rgba(255,47,168,0.04));
+
+    /* --- Blue/Turquoise Gradients (selective) --- */
+    --gradient-blue-turquoise: linear-gradient(135deg, #4DA6FF, #45D9C8);
+    --gradient-soft-blue: linear-gradient(135deg, rgba(77,166,255,0.06), rgba(69,217,200,0.03));
+
+    /* --- Shadows — colored glows --- */
+    --shadow-card: 0 4px 18px rgba(45,27,78,0.06);
+    --shadow-purple: 0 4px 20px rgba(139,44,255,0.15);
+    --shadow-pink: 0 4px 20px rgba(255,47,168,0.15);
+    --shadow-glow: 0 0 24px rgba(139,44,255,0.12);
+    --shadow-strong: 0 0 36px rgba(139,44,255,0.22);
+    --shadow-hero: 0 8px 36px rgba(139,44,255,0.22);
+    --shadow-blue: 0 4px 20px rgba(77,166,255,0.12);
+
+    /* --- Borders --- */
+    --border-light: #EDE5F5;
+    --border-medium: #D9CCE8;
+    --border-hover: #C8B5E0;
+    --border-purple: rgba(139,44,255,0.18);
+    --border-pink: rgba(255,47,168,0.18);
+    --border-blue: rgba(77,166,255,0.16);
+
+    /* --- Navbar --- */
+    --navbar-bg: rgba(255,255,255,0.92);
+    --navbar-border: rgba(139,44,255,0.10);
+
+    /* --- Typography --- */
+    --font-family: "Plus Jakarta Sans", sans-serif;
+
+    /* --- Transitions --- */
+    --transition-fast: 0.25s ease;
+    --transition-smooth: 0.40s ease;
 }
+
 
 /* =====================================================
-   16. RESPONSIVE / MEDIA QUERIES
+   2. GLOBAL RESET & BASE STYLES
    ===================================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* Tablet */
-@media (max-width: 991.98px) {
-    .hero-heading {
-        font-size: 2.4rem;
-    }
+html { scroll-behavior: smooth; }
 
-    .section-title {
-        font-size: 1.75rem;
-    }
-
-    .cta-section h2 {
-        font-size: 1.85rem;
-    }
-
-    .contact-title {
-        font-size: 1.5rem;
-    }
-
-    .navbar-brand {
-        font-size: 1.2rem;
-    }
-
-    .card-profile {
-        max-width: 190px;
-    }
+body {
+    font-family: var(--font-family);
+    background: var(--bg-white);
+    color: var(--text-body);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
-/* Mobile */
-@media (max-width: 767.98px) {
-    .hero-heading {
-        font-size: 1.95rem;
-        letter-spacing: -0.5px;
-    }
+body.bg-light, body.bg-white { background: var(--bg-white) !important; }
 
-    .hero-subtitle {
-        font-size: 1.05rem;
-    }
-
-    .hero-lead {
-        font-size: 0.95rem;
-    }
-
-    .section-title {
-        font-size: 1.5rem;
-    }
-
-    .section {
-        padding: 3.25rem 0;
-    }
-
-    .cta-section {
-        padding: 3.25rem 0;
-    }
-
-    .cta-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .contact-card {
-        padding: 1.5rem;
-    }
-
-    .contact-title {
-        font-size: 1.35rem;
-    }
-
-    .btn-hero-primary,
-    .btn-hero-outline,
-    .btn-submit,
-    .btn-cta {
-        padding: 0.7rem 1.4rem;
-        font-size: 0.93rem;
-        width: 100%;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .card-profile {
-        max-width: 165px;
-    }
-
-    .card-profile .card-icon {
-        font-size: 2.6rem;
-    }
-
-    footer {
-        padding: 1.1rem 0;
-    }
-
-    footer .d-flex {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 0.5rem;
-    }
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+    font-weight: 700;
+    line-height: 1.25;
 }
 
-/* Small mobile */
-@media (max-width: 425.98px) {
-    .hero-heading {
-        font-size: 1.6rem;
-    }
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; }
 
-    .section-title {
-        font-size: 1.3rem;
-    }
+p { color: var(--text-body); line-height: 1.7; }
 
-    .navbar-brand {
-        font-size: 1.05rem;
-    }
-
-    .navbar-collapse {
-        padding-top: 0.6rem;
-    }
-
-    .navbar-nav .nav-link {
-        padding: 0.4rem 0.65rem;
-        font-size: 0.85rem;
-    }
-
-    .card-profile {
-        max-width: 145px;
-    }
-
-    .card-profile .card-body {
-        padding: 0.9rem;
-    }
+a {
+    color: var(--purple);
+    text-decoration: none;
+    transition: color var(--transition-fast);
 }
+
+a:hover { color: var(--pink); }
+
+a:focus-visible {
+    outline: 2px solid var(--purple);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+::selection {
+    background: rgba(139,44,255,0.14);
+    color: var(--purple);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-white); }
+::-webkit-scrollbar-thumb { background: var(--border-medium); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--purple); }
+
 
 /* =====================================================
-   17. ANIMATIONS
+   3. GRADIENT UTILITIES
    ===================================================== */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
 
-    to {
-        opacity: 1;
-    }
+/* Purple/Pink gradients — dominant */
+.text-gradient {
+    background: var(--gradient-hero);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(18px);
-    }
+.bg-gradient-hero { background: var(--gradient-hero) !important; }
+.bg-gradient-violet-purple { background: var(--gradient-violet-purple) !important; }
+.bg-gradient-tri { background: var(--gradient-tri) !important; }
+.bg-gradient-footer { background: var(--gradient-footer) !important; }
+.bg-gradient-card { background: var(--gradient-card) !important; }
+.bg-gradient-soft-purple-pink { background: var(--gradient-soft-purple-pink) !important; }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+/* Blue/Turquoise gradients — selective */
+.bg-gradient-blue-turquoise { background: var(--gradient-blue-turquoise) !important; }
+.bg-gradient-soft-blue { background: var(--gradient-soft-blue) !important; }
 
-@keyframes pulse-glow {
+/* Solid tints */
+.bg-soft-purple { background: var(--bg-soft-purple) !important; }
+.bg-soft-pink { background: var(--bg-soft-pink) !important; }
+.bg-light-purple { background: var(--bg-light-purple) !important; }
+.bg-light-pink { background: var(--bg-light-pink) !important; }
+.bg-elevated { background: var(--bg-elevated) !important; }
+.bg-card { background: var(--bg-card) !important; }
+.bg-section-alt { background: var(--bg-section-alt) !important; }
+.bg-soft-gradient { background: var(--bg-soft-gradient) !important; }
+.bg-white-custom { background: var(--bg-white) !important; }
 
-    0%,
-    100% {
-        box-shadow: 0 0 18px rgba(139, 44, 255, 0.18);
-    }
-
-    50% {
-        box-shadow: 0 0 32px rgba(139, 44, 255, 0.30);
-    }
-}
-
-.fade-in-section {
-    animation: fadeIn 0.5s ease forwards;
-}
-
-.slide-up-section {
-    animation: slideUp 0.5s ease forwards;
-}
 
 /* =====================================================
-   18. PRINT STYLES
+   4. BUTTON SYSTEM
    ===================================================== */
-@media print {
-    body {
-        background: white;
-        color: black;
-    }
+.btn {
+    font-family: var(--font-family);
+    font-weight: 600;
+    border-radius: 10px;
+    transition: all var(--transition-fast);
+    letter-spacing: 0.2px;
+    position: relative;
+    overflow: hidden;
+}
 
-    .navbar,
-    footer,
-    .btn,
-    .hero-buttons,
-    .card-profile .card-social,
-    .profile-container {
-        display: none !important;
-    }
+/* Primary: purple→pink gradient */
+.btn-primary {
+    background: var(--gradient-hero) !important;
+    border: none !important;
+    color: var(--white) !important;
+    box-shadow: var(--shadow-purple);
+    padding: 0.7rem 1.5rem;
+}
+.btn-primary:hover {
+    background: var(--gradient-tri) !important;
+    box-shadow: var(--shadow-strong) !important;
+    transform: translateY(-2px);
+    color: var(--white) !important;
+}
+.btn-primary:active { transform: translateY(0); }
 
-    .section,
-    .card,
-    .contact-card {
-        box-shadow: none !important;
-        border-color: #ddd !important;
-        background: white !important;
-    }
+/* Outline dark: subtle purple border */
+.btn-outline-dark {
+    border-color: var(--border-medium) !important;
+    color: var(--text-primary) !important;
+    background: transparent !important;
+    border-radius: 10px !important;
+}
+.btn-outline-dark:hover {
+    border-color: var(--purple) !important;
+    background: rgba(139,44,255,0.05) !important;
+    color: var(--purple) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
 
-    .text-gradient,
-    .bg-gradient-hero,
-    .bg-gradient-tri,
-    .badge.bg-gradient-hero,
-    .badge.bg-gradient-tri {
-        background: none !important;
-        -webkit-background-clip: none !important;
-        color: #333 !important;
-        -webkit-text-fill-color: #333 !important;
-    }
+/* Outline light: for use on gradient backgrounds */
+.btn-outline-light {
+    border-color: rgba(255,255,255,0.40) !important;
+    color: var(--white) !important;
+    background: transparent !important;
+    border-radius: 10px !important;
+}
+.btn-outline-light:hover {
+    background: var(--white) !important;
+    border-color: var(--white) !important;
+    color: var(--purple) !important;
+    transform: translateY(-2px);
+}
+
+/* Custom hero primary button */
+.btn-hero-primary {
+    background: var(--gradient-hero);
+    border: none;
+    color: var(--white);
+    padding: 0.85rem 2.2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    box-shadow: var(--shadow-hero);
+    transition: all var(--transition-smooth);
+    display: inline-block;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+}
+.btn-hero-primary:hover {
+    background: var(--gradient-tri);
+    box-shadow: var(--shadow-strong);
+    transform: translateY(-3px);
+    color: var(--white);
+}
+
+/* Custom hero outline button (semi-transparent, light) */
+.btn-hero-outline {
+    background: rgba(255,255,255,0.12);
+    border: 2px solid rgba(255,255,255,0.55);
+    color: var(--white);
+    padding: 0.8rem 2.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all var(--transition-smooth);
+    display: inline-block;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+}
+.btn-hero-outline:hover {
+    background: rgba(255,255,255,0.20);
+    border-color: var(--white);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(255,255,255,0.15);
+}
+
+/* CTA button (for gradient sections) */
+.btn-cta {
+    background: var(--white);
+    color: var(--purple);
+    border: none;
+    padding: 0.85rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    transition: all var(--transition-smooth);
+    display: inline-block;
+    cursor: pointer;
+}
+.btn-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+    color: var(--pink);
+}
+
+/* Secondary gradient button (violet→purple) */
+.btn-gradient-secondary {
+    background: var(--gradient-violet-purple);
+    border: none;
+    color: var(--white);
+    padding: 0.65rem 1.4rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    border-radius: 10px;
+    box-shadow: var(--shadow-purple);
+    transition: all var(--transition-smooth);
+    display: inline-block;
+    cursor: pointer;
+}
+.btn-gradient-secondary:hover {
+    box-shadow: var(--shadow-strong);
+    transform: translateY(-2px);
+    color: var(--white);
+}
+
+/* Small gradient button */
+.btn-sm-gradient {
+    background: var(--gradient-hero);
+    border: none;
+    color: var(--white);
+    padding: 0.45rem 1rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all var(--transition-fast);
+    display: inline-block;
+    cursor: pointer;
+}
+.btn-sm-gradient:hover {
+    background: var(--gradient-tri);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+    color: var(--white);
+}
+
+/* Submit button */
+.btn-submit {
+    background: var(--gradient-hero);
+    border: none;
+    color: var(--white);
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    box-shadow: var(--shadow-purple);
+    width: 100%;
+    cursor: pointer;
+    transition: all var(--transition-smooth);
+}
+.btn-submit:hover {
+    background: var(--gradient-tri);
+    box-shadow: var(--shadow-strong);
+    transform: translateY(-3px);
+    color: var(--white);
+}
+.btn-submit:active { transform: translateY(-1px); }
+
+/* Nav button (small, in navbar) */
+.btn-nav {
+    background: var(--gradient-hero);
+    color: var(--white) !important;
+    border-radius: 10px;
+    padding: 0.5rem 1.2rem;
+    font-weight: 600;
+    box-shadow: var(--shadow-purple);
+}
+.btn-nav:hover {
+    background: var(--gradient-tri);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-1px);
+    color: var(--white) !important;
 }
