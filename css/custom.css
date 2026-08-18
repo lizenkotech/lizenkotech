@@ -1960,7 +1960,7 @@ footer a:hover {
 }
 
 .nav-links a {
-    color: white;
+    color: rgb(250, 194, 194);
     text-decoration: none;
     transition: color 0.3s;
 }
