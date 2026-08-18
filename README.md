@@ -20,7 +20,7 @@ I'm a developer focused on building, learning, and improving through practical p
 
 **LIZENKO.tech** is my personal development portfolio, created to showcase my projects, technical skills, and work in web development.
 
-🔗 **Portfolio:** [LIZENKO.tech](https://lizenko.tech)
+🔗 **Portfolio:** [LIZENKO.tech]([https://lizenko.tech](https://lizenko.netlify.app/projects))
 
 ### ⚙️ My Approach
 
