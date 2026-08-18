@@ -566,7 +566,7 @@ blockquote-footer {
 
 .img-thumbnail {
     padding: 0.25rem;
-    background-color: #fff;
+    background-color: #f4bebe;
     border: 1px solid var(--bs-border-color);
     border-radius: 0.375rem;
     max-width: 100%;
