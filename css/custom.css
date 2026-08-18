@@ -530,7 +530,8 @@ header.py-5 {
 }
 
 .profile-img {
-    max-width: 100%;
+    max-width: 200px;
+    width: auto;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(139, 44, 255, 0.12);

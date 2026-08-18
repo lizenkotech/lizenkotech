@@ -23,17 +23,18 @@
 
 /* ---- SVG decoration ---- */
 .flip-subscribe svg {
-  width: 100%;
+  width: 320px;
   height: auto;
   position: absolute;
-  left: -150px;
+  left: -100px;
+  top: -40px;
   z-index: 0;
 }
 
 .flip-subscribe svg path {
   stroke: #FFFFFF;
   fill: transparent;
-  stroke-width: 25px;
+  stroke-width: 18px;
   stroke-linecap: round;
   stroke-miterlimit: 10;
 }
