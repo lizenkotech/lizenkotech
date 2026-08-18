@@ -9,9 +9,9 @@
    NAVBAR SCROLL EFFECT
    ===================================================== */
 .navbar.scrolled {
-    background: rgba(255,255,255,0.97) !important;
-    border-bottom-color: rgba(139,44,255,0.20) !important;
-    box-shadow: 0 2px 12px rgba(139,44,255,0.06);
+    background: rgba(255, 255, 255, 0.97) !important;
+    border-bottom-color: rgba(139, 44, 255, 0.20) !important;
+    box-shadow: 0 2px 12px rgba(139, 44, 255, 0.06);
 }
 
 
@@ -20,24 +20,69 @@
    ===================================================== */
 
 @media (max-width: 991.98px) {
-    .hero-heading { font-size: 2.4rem; }
-    .section-title { font-size: 1.75rem; }
-    .cta-section h2 { font-size: 1.85rem; }
-    .contact-title { font-size: 1.5rem; }
-    .navbar-brand { font-size: 1.2rem; }
-    .card-profile { max-width: 190px; }
+    .hero-heading {
+        font-size: 2.4rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .cta-section h2 {
+        font-size: 1.85rem;
+    }
+
+    .contact-title {
+        font-size: 1.5rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .card-profile {
+        max-width: 190px;
+    }
 }
 
 @media (max-width: 767.98px) {
-    .hero-heading { font-size: 1.95rem; letter-spacing: -0.5px; }
-    .hero-subtitle { font-size: 1.05rem; }
-    .hero-lead { font-size: 0.95rem; }
-    .section-title { font-size: 1.5rem; }
-    .section { padding: 3.25rem 0; }
-    .cta-section { padding: 3.25rem 0; }
-    .cta-section h2 { font-size: 1.5rem; }
-    .contact-card { padding: 1.5rem; }
-    .contact-title { font-size: 1.35rem; }
+    .hero-heading {
+        font-size: 1.95rem;
+        letter-spacing: -0.5px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.05rem;
+    }
+
+    .hero-lead {
+        font-size: 0.95rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .section {
+        padding: 3.25rem 0;
+    }
+
+    .cta-section {
+        padding: 3.25rem 0;
+    }
+
+    .cta-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+    }
+
+    .contact-title {
+        font-size: 1.35rem;
+    }
+
     .btn-hero-primary,
     .btn-hero-outline,
     .btn-submit,
@@ -46,10 +91,24 @@
         font-size: 0.93rem;
         width: 100%;
     }
-    .hero-buttons { flex-direction: column; align-items: stretch; }
-    .card-profile { max-width: 165px; }
-    .card-profile .card-icon { font-size: 2.6rem; }
-    footer { padding: 1.1rem 0; }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .card-profile {
+        max-width: 165px;
+    }
+
+    .card-profile .card-icon {
+        font-size: 2.6rem;
+    }
+
+    footer {
+        padding: 1.1rem 0;
+    }
+
     footer .d-flex {
         flex-direction: column;
         align-items: center;
@@ -59,13 +118,34 @@
 }
 
 @media (max-width: 425.98px) {
-    .hero-heading { font-size: 1.6rem; }
-    .section-title { font-size: 1.3rem; }
-    .navbar-brand { font-size: 1.05rem; }
-    .navbar-collapse { padding-top: 0.6rem; }
-    .navbar-nav .nav-link { padding: 0.4rem 0.65rem; font-size: 0.85rem; }
-    .card-profile { max-width: 145px; }
-    .card-profile .card-body { padding: 0.9rem; }
+    .hero-heading {
+        font-size: 1.6rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.05rem;
+    }
+
+    .navbar-collapse {
+        padding-top: 0.6rem;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.4rem 0.65rem;
+        font-size: 0.85rem;
+    }
+
+    .card-profile {
+        max-width: 145px;
+    }
+
+    .card-profile .card-body {
+        padding: 0.9rem;
+    }
 }
 
 
@@ -73,35 +153,79 @@
    ANIMATIONS
    ===================================================== */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
+
 @keyframes slideUp {
-    from { opacity: 0; transform: translateY(18px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
 @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 18px rgba(139,44,255,0.18); }
-    50% { box-shadow: 0 0 32px rgba(139,44,255,0.30); }
+
+    0%,
+    100% {
+        box-shadow: 0 0 18px rgba(139, 44, 255, 0.18);
+    }
+
+    50% {
+        box-shadow: 0 0 32px rgba(139, 44, 255, 0.30);
+    }
 }
-.fade-in-section { animation: fadeIn 0.5s ease forwards; }
-.slide-up-section { animation: slideUp 0.5s ease forwards; }
+
+.fade-in-section {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.slide-up-section {
+    animation: slideUp 0.5s ease forwards;
+}
 
 
 /* =====================================================
    PRINT STYLES
    ===================================================== */
 @media print {
-    body { background: white; color: black; }
-    .navbar, footer, .btn, .hero-buttons,
-    .card-profile .card-social, .profile-container { display: none !important; }
-    .section, .card, .contact-card {
+    body {
+        background: white;
+        color: black;
+    }
+
+    .navbar,
+    footer,
+    .btn,
+    .hero-buttons,
+    .card-profile .card-social,
+    .profile-container {
+        display: none !important;
+    }
+
+    .section,
+    .card,
+    .contact-card {
         box-shadow: none !important;
         border-color: #ddd !important;
         background: white !important;
     }
-    .text-gradient, .bg-gradient-hero, .bg-gradient-tri,
-    .badge.bg-gradient-hero, .badge.bg-gradient-tri {
+
+    .text-gradient,
+    .bg-gradient-hero,
+    .bg-gradient-tri,
+    .badge.bg-gradient-hero,
+    .badge.bg-gradient-tri {
         background: none !important;
         -webkit-background-clip: none !important;
         color: #333 !important;
