@@ -176,7 +176,7 @@ hr {
     --bs-popover-border-color: var(--bs-border-color-translucent);
     --bs-popover-border-radius: 0.5rem;
     --bs-popover-inner-border-radius: calc(0.5rem - 1px);
-    --bs-popover-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    --bs-popover-box-shadow: 0 0.5rem 1rem rgba(101, 73, 73, 0.15);
     --bs-popover-header-padding-x: 1rem;
     --bs-popover-header-padding-y: 0.5rem;
     --bs-popover-header-font-size: 1rem;
@@ -948,48 +948,48 @@ html {
    ========================================== */
 
 .pattern {
-	position: fixed;
-	z-index: -1;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: no-repeat center center / cover;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: no-repeat center center / cover;
 }
 
 .pattern--hidden {
-	visibility: hidden;
-	opacity: 0;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .pattern--hidden .polygon {
-	transition-duration: 0ms;
+    transition-duration: 0ms;
 }
 
 .pattern svg {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .polygon {
-	transition: -webkit-transform 300ms ease-in-out, opacity 300ms ease-in-out;
-	transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
-	-webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transform-origin: center bottom;
-	transform-origin: center bottom;
+    transition: -webkit-transform 300ms ease-in-out, opacity 300ms ease-in-out;
+    transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
 }
 
 .polygon--hidden {
-	opacity: 0;
-	-webkit-transform: scale(0);
-	transform: scale(0);
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
 }
 
 /* disable scale on firefox */
 .ff .polygon {
-	-webkit-transform: scale(1)!important;
-	transform: scale(1)!important;
+    -webkit-transform: scale(1) !important;
+    transform: scale(1) !important;
 }
 
 /* ==========================================
@@ -998,45 +998,45 @@ html {
    ========================================== */
 
 .card {
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	max-width: 300px;
-	margin: auto;
-	text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
 }
 
 .card-title {
-	color: #495057;
-	font-size: 18px;
+    color: #495057;
+    font-size: 18px;
 }
 
 .card-btn {
-	border: none;
-	outline: 0;
-	display: inline-block;
-	padding: 8px;
-	color: white;
-	background-color: #1e30f3;
-	text-align: center;
-	cursor: pointer;
-	width: 100%;
-	font-size: 18px;
-	border-radius: 4px;
-	transition: opacity 0.2s ease;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #1e30f3;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 4px;
+    transition: opacity 0.2s ease;
 }
 
 .card-btn:hover {
-	opacity: 0.85;
+    opacity: 0.85;
 }
 
 .card a {
-	text-decoration: none;
-	font-size: 22px;
-	color: #1e30f3;
-	transition: opacity 0.2s ease;
+    text-decoration: none;
+    font-size: 22px;
+    color: #1e30f3;
+    transition: opacity 0.2s ease;
 }
 
 .card a:hover {
-	opacity: 0.7;
+    opacity: 0.7;
 }
 
 /* ==========================================
@@ -1044,12 +1044,12 @@ html {
    ========================================== */
 
 .links {
-	margin: 2em 0 0;
+    margin: 2em 0 0;
 }
 
 .links a {
-	display: inline-block;
-	margin: 0 .5em;
+    display: inline-block;
+    margin: 0 .5em;
 }
 
 /* ==========================================
@@ -1059,66 +1059,66 @@ html {
 
 /* Navbar tekst — donker op licht */
 .navbar-light .navbar-nav .nav-link {
-	color: #212529 !important;
-	opacity: 1;
+    color: #212529 !important;
+    opacity: 1;
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
-	color: #0a0a0a !important;
+    color: #0a0a0a !important;
 }
 
 .navbar-light .navbar-brand {
-	color: #0a0a0a !important;
+    color: #0a0a0a !important;
 }
 
 .navbar-light .navbar-toggler {
-	color: #212529 !important;
+    color: #212529 !important;
 }
 
 .navbar-light .navbar-toggler-icon {
-	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23212529' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23212529' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* Hero "Hi, I'm LIZENKO" subtitel */
 header .fs-3 {
-	color: #343a40 !important;
+    color: #343a40 !important;
 }
 
 /* Lead tekst — zachte witte schaduw voor leesbaarheid */
 header .lead {
-	text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
 /* Hero buttons op gradient */
 header a.btn-outline-dark {
-	border-color: rgba(0, 0, 0, 0.35);
-	color: #212529;
+    border-color: rgba(0, 0, 0, 0.35);
+    color: #212529;
 }
 
 header a.btn-outline-dark:hover {
-	background-color: #212529;
-	border-color: #212529;
-	color: #fff;
+    background-color: #212529;
+    border-color: #212529;
+    color: #fff;
 }
 
 /* Card muted tekst */
 .card .text-muted {
-	color: #6c757d !important;
+    color: #6c757d !important;
 }
 
 /* Footer links */
 footer a {
-	color: #495057;
+    color: #495057;
 }
 
 footer a:hover {
-	color: #212529;
+    color: #212529;
 }
 
 /* Badge op gradient */
 .badge.bg-gradient-primary-to-secondary {
-	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
 }
 
 /* ==========================================
@@ -3914,43 +3914,43 @@ footer a:hover {
    ============================================ */
 
 .pattern {
-	position: fixed;
-	z-index: -1;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: no-repeat center center / cover;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: no-repeat center center / cover;
 }
 
 .pattern--hidden {
-	visibility: hidden;
-	opacity: 0;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .pattern--hidden .polygon {
-	transition-duration: 0ms;
+    transition-duration: 0ms;
 }
 
 .pattern svg {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .polygon {
-	transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
-	transform: scale(1);
-	transform-origin: center bottom;
+    transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+    transform: scale(1);
+    transform-origin: center bottom;
 }
 
 .polygon--hidden {
-	opacity: 0;
-	transform: scale(0);
+    opacity: 0;
+    transform: scale(0);
 }
 
 /* Disable scale on Firefox */
 .ff .polygon {
-	transform: scale(1) !important;
+    transform: scale(1) !important;
 }
 
 /* ============================================
@@ -3959,45 +3959,45 @@ footer a:hover {
    ============================================ */
 
 .card-profile {
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	max-width: 300px;
-	margin: auto;
-	text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
 }
 
 .card-profile-title {
-	color: #495057;
-	font-size: 18px;
+    color: #495057;
+    font-size: 18px;
 }
 
 .card-profile-btn {
-	border: none;
-	outline: 0;
-	display: inline-block;
-	padding: 8px;
-	color: white;
-	background: linear-gradient(135deg, #1e30f3, #e21e80);
-	text-align: center;
-	cursor: pointer;
-	width: 100%;
-	font-size: 18px;
-	border-radius: 4px;
-	transition: opacity 0.2s;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background: linear-gradient(135deg, #1e30f3, #e21e80);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 4px;
+    transition: opacity 0.2s;
 }
 
 .card-profile-btn:hover {
-	opacity: 0.85;
+    opacity: 0.85;
 }
 
 .card-profile a {
-	text-decoration: none;
-	font-size: 22px;
-	color: #1e30f3;
-	transition: opacity 0.2s;
+    text-decoration: none;
+    font-size: 22px;
+    color: #1e30f3;
+    transition: opacity 0.2s;
 }
 
 .card-profile a:hover {
-	opacity: 0.7;
+    opacity: 0.7;
 }
 
 /* ============================================
@@ -4005,12 +4005,12 @@ footer a:hover {
    ============================================ */
 
 .links {
-	margin: 2em 0 0;
+    margin: 2em 0 0;
 }
 
 .links a {
-	display: inline-block;
-	margin: 0 .5em;
+    display: inline-block;
+    margin: 0 .5em;
 }
 
 /* ============================================
@@ -4019,58 +4019,58 @@ footer a:hover {
    ============================================ */
 
 .navbar-light .navbar-nav .nav-link {
-	color: #212529 !important;
-	opacity: 1;
+    color: #212529 !important;
+    opacity: 1;
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
-	color: #0a0a0a !important;
+    color: #0a0a0a !important;
 }
 
 .navbar-light .navbar-brand {
-	color: #0a0a0a !important;
+    color: #0a0a0a !important;
 }
 
 .navbar-light .navbar-toggler {
-	color: #212529 !important;
+    color: #212529 !important;
 }
 
 .navbar-light .navbar-toggler-icon {
-	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23212529' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23212529' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 header .fs-3 {
-	color: #343a40 !important;
+    color: #343a40 !important;
 }
 
 header .lead {
-	text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
 header a.btn-outline-dark {
-	border-color: rgba(0, 0, 0, 0.35);
-	color: #212529;
+    border-color: rgba(0, 0, 0, 0.35);
+    color: #212529;
 }
 
 header a.btn-outline-dark:hover {
-	background-color: #212529;
-	border-color: #212529;
-	color: #fff;
+    background-color: #212529;
+    border-color: #212529;
+    color: #fff;
 }
 
 .card .text-muted {
-	color: #6c757d !important;
+    color: #6c757d !important;
 }
 
 footer a {
-	color: #495057;
+    color: #495057;
 }
 
 footer a:hover {
-	color: #212529;
+    color: #212529;
 }
 
 .badge.bg-gradient-primary-to-secondary {
-	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
 }
