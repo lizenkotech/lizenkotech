@@ -201,7 +201,7 @@
 @media print {
     body {
         background: white;
-        color: black;
+        color: rgb(220, 29, 176);
     }
 
     .navbar,
