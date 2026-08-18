@@ -2392,10 +2392,10 @@ section {
    Footer
 ========================================== */
 footer {
-    background: #685b5b;
+    background: #ebc8ec;
     background-color: #222;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(252, 145, 225, 0.9);
     padding: 3rem 0;
     text-align: center;
 }
