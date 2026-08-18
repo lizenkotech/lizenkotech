@@ -1,6 +1,6 @@
 /*
   =====================================================
-  LIZENKO.tech — Custom Stylesheet (Part 4)
+  LIZENKO.tech — Custom Stylesheet (Part 3)
   =====================================================
 */
 
@@ -111,7 +111,7 @@
 /* Skill grid items */
 .skill-grid-item {
     background: rgba(139,44,255,0.04);
-    border: 1px solid var(-- border-light);
+    border: 1px solid var(--border-light);
     border-radius: 10px;
     padding: 0.9rem 1.1rem;
     color: var(--text-light);
@@ -202,12 +202,9 @@
     font-weight: 500;
     letter-spacing: 0.2px;
 }
-.project-card-tech span {
-    color: var(--purple);
-    font-weight: 600;
-}
+.project-card-tech span { color: var(--purple); font-weight: 600; }
 
-/* CTA section */
+/* CTA section (gradient background) */
 .cta-section {
     background: var(--gradient-hero);
     padding: 4.5rem 0;
@@ -373,10 +370,7 @@ footer {
     padding: 1.4rem 0;
     margin-top: auto;
 }
-footer .small {
-    color: var(--text-muted);
-    font-size: 0.82rem;
-}
+footer .small { color: var(--text-muted); font-size: 0.82rem; }
 footer .small a {
     color: var(--text-light);
     font-weight: 500;
