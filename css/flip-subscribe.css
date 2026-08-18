@@ -1,6 +1,7 @@
 /* =====================================================
    FLIP CARD SUBSCRIBE — CodeMyUI inspired
    LIZENKO.tech brand: purple #8B2CFF · pink #FF2FA8
+   Vanilla CSS (no SCSS), no jQuery, no Splitting.js
    ===================================================== */
 
 .flip-subscribe-wrap {
@@ -210,51 +211,63 @@
 
 /* ---- FLIP state ---- */
 
-.flip-subscribe-wrap.flip {
-    .flip-subscribe-svg path {
-        animation: flip-subscribe-path 2s ease-in-out 1 forwards;
-    }
-    .flip-subscribe-input-email {
-        opacity: 0;
-        pointer-events: none;
-    }
-    .flip-subscribe-label {
-        animation: flip-subscribe-openclose 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1 forwards;
-        animation-delay: 1.5s;
-    }
-    .flip-subscribe-spark {
-        animation: flip-subscribe-spark 0.3s ease-in-out 1 forwards;
-        animation-delay: var(--spark-delay, 2.5s);
-    }
-    .flip-subscribe-field {
-        z-index: 1;
-    }
-    .flip-subscribe-field .word.slide {
-        display: inline-block;
-        width: 100%;
-        transform-origin: 42.5% 50%;
-        animation: flip-subscribe-jump 2.25s ease-in-out 1 forwards;
-        animation-delay: 0.2s;
-    }
-    .flip-subscribe-field .char {
-        @for $i from 1 through 150 {
-            &:nth-of-type(#{$i}) {
-                transform: translateX(0px);
-                &.slide {
-                    transition: #{0.2 + ($i / 50)}s ease-in;
-                    transition-delay: 0.05s;
-                    transform: translateX(#{($i - 1) * -9.25px});
-                    &:after {
-                        animation-duration: #{0.25 + ($i / 50)}s;
-                        animation-delay: #{$i / 50}s;
-                    }
-                }
-            }
-        }
-    }
+.flip-subscribe-wrap.flip .flip-subscribe-svg path {
+    animation: flip-subscribe-path 2s ease-in-out 1 forwards;
 }
 
-/* ---- Keyframes (standard CSS, no SCSS loops) ---- */
+.flip-subscribe-wrap.flip .flip-subscribe-input-email {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.flip-subscribe-wrap.flip .flip-subscribe-label {
+    animation: flip-subscribe-openclose 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1 forwards;
+    animation-delay: 1.5s;
+}
+
+.flip-subscribe-wrap.flip .flip-subscribe-spark:nth-of-type(1) {
+    animation: flip-subscribe-spark 0.3s ease-in-out 1 forwards;
+    animation-delay: 2.35s;
+}
+
+.flip-subscribe-wrap.flip .flip-subscribe-spark:nth-of-type(2) {
+    animation: flip-subscribe-spark 0.3s ease-in-out 1 forwards;
+    animation-delay: 2.45s;
+}
+
+.flip-subscribe-wrap.flip .flip-subscribe-spark:nth-of-type(3) {
+    animation: flip-subscribe-spark 0.3s ease-in-out 1 forwards;
+    animation-delay: 2.55s;
+}
+
+.flip-subscribe-wrap.flip .flip-subscribe-spark:nth-of-type(4) {
+    animation: flip-subscribe-spark 0.3s ease-in-out 1 forwards;
+    animation-delay: 2.65s;
+}
+
+.flip-subscribe-wrap.flip .flip-subscribe-spark:nth-of-type(5) {
+    animation: flip-subscribe-spark 0.3s ease-in-out 1 forwards;
+    animation-delay: 2.75s;
+}
+
+.flip-subscribe-wrap.flip .flip-subscribe-spark:nth-of-type(6) {
+    animation: flip-subscribe-spark 0.3s ease-in-out 1 forwards;
+    animation-delay: 2.85s;
+}
+
+.flip-subscribe-wrap.flip .flip-subscribe-field {
+    z-index: 1;
+}
+
+.flip-subscribe-wrap.flip .flip-subscribe-field .word.slide {
+    display: inline-block;
+    width: 100%;
+    transform-origin: 42.5% 50%;
+    animation: flip-subscribe-jump 2.25s ease-in-out 1 forwards;
+    animation-delay: 0.2s;
+}
+
+/* ---- Keyframes ---- */
 
 @keyframes flip-subscribe-path {
     0% {
