@@ -6,7 +6,7 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(10, 6, 16, 0.85);
+    background: rgba(200, 172, 243, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(139, 44, 255, 0.20);
@@ -47,6 +47,10 @@
     padding: 0.5rem 1rem;
     position: relative;
     transition: color 0.2s ease;
+
+    .navbar-nav .nav-link {
+        color: rgba(255, 255, 255, 0.75) !important;
+    }
 }
 
 .navbar-nav .nav-link::after {
