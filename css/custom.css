@@ -881,7 +881,7 @@ blockquote-footer {
     ======================================== */
 
 .project-card {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+    background: linear-gradient(180deg, rgba(247, 194, 194, 0.02), transparent);
     border-radius: 8px;
     padding: 1rem;
     transition: transform .3s ease, box-shadow .3s ease;
