@@ -604,6 +604,14 @@ header.py-5 {
     box-shadow: var(--card-shadow);
 }
 
+.project-card .project-card-img {
+    display: block;
+    max-width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    object-position: center;
+}
+
 .project-card:hover {
     transform: translateY(-3px);
     box-shadow: var(--card-hover-shadow);
