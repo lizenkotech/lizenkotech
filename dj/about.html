@@ -13,11 +13,6 @@
             color: #f5f5f5;
         }
 
-        a {
-            color: #1e90ff;
-            text-decoration: none;
-        }
-
         header {
             padding: 16px 24px;
             display: flex;
@@ -25,19 +20,32 @@
             align-items: center;
             background: rgba(0, 0, 0, 0.6);
             position: sticky;
-            top: 0;
+            top: 55px;
+            margin-top: 0;
             backdrop-filter: blur(8px);
-            z-index: 10;
+            z-index: 1001;
         }
 
         .logo {
             font-weight: bold;
             font-size: 20px;
+            text-decoration: none;
+            color: #1e90ff;
+            display: block;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
         }
 
         nav a {
             margin-left: 16px;
             font-size: 14px;
+            text-decoration: none;
+            color: #1e90ff;
         }
 
         main {
@@ -94,17 +102,24 @@
 </head>
 
 <body>
-    <header>
+    <!-- TOPBAR -->
+    <div class="topbar">
         <a href="index.html" class="logo">DJ Lizenko</a>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">Over mij</a>
-            <a href="events.html">Events</a>
-            <a href="gallery.html">Foto's</a>
-            <a href="requests/index.html">Verzoekjes</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+        <div class="lang">
+            <button onclick="setLang('nl')">NL</button>
+            <button onclick="setLang('en')">EN</button>
+            <button onclick="setLang('fr')">FR</button>
+        </div>
+    </div>
+
+    <nav style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:10px 0;margin-top:55px;margin-bottom:20px;">
+        <a href="index.html">Home</a>
+        <a href="about.html">Over mij</a>
+        <a href="events.html">Events</a>
+        <a href="gallery.html">Foto's</a>
+        <a href="requests/index.html">Verzoekjes</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
     <main>
         <h1>Over DJ lizenko</h1>
