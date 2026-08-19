@@ -1,4 +1,8 @@
-/* GENERAL */
+/* ============================================
+   DJ Section Stylesheet
+   Source: lizenko-dj/public/style.css
+   Adapted for lizenko.tech/dj/
+   ============================================ */
 
 :root {
     --electric-blue: #00BFFF;
@@ -9,89 +13,85 @@
     --white: #F5F5F5;
 }
 
-body {
+* {
     margin: 0;
-    padding-top: 70px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial, sans-serif;
-    background: radial-gradient(circle at top,
-            #121212 0%,
-            #050505 100%);
+    background: radial-gradient(circle at top, #121212 0%, #050505 100%);
     color: var(--white);
     text-align: center;
+    min-height: 100vh;
 }
 
-.hero-logo {
-    width: 250px;
-    max-width: 80%;
-    margin-bottom: 30px;
-
-    filter:
-        drop-shadow(0 0 10px #ff00aa) drop-shadow(0 0 20px #ff00aa) drop-shadow(0 0 20px #00aaff);
-
-    animation: glowPulse 3s infinite ease-in-out;
+/* ============================================
+   LOGO
+   ============================================ */
+.logo {
+    font-weight: bold;
+    font-size: 22px;
+    color: var(--white);
+    text-decoration: none;
+    display: inline-block;
 }
 
-html,
-body {
-    height: 100%;
+.logo:hover {
+    color: var(--neon-pink);
 }
 
-/* HERO */
-.hero {
-    height: 100vh;
+/* ============================================
+   NAVIGATION
+   ============================================ */
+dj-nav {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 10px 0;
 }
 
-/* NEON TEXT */
-.glow {
-    color: white;
-    text-shadow:
-        0 0 10px var(--electric-blue),
-        0 0 20px var(--neon-purple),
-        0 0 40px var(--neon-pink),
-        0 0 80px var(--neon-pink);
+dj-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 6px 14px;
+    border: 1px solid rgba(0, 191, 255, 0.3);
+    border-radius: 20px;
+    transition: all 0.3s ease;
 }
 
-/* TITLE */
-h1 {
-    font-size: 60px;
-    margin: 0;
-    letter-spacing: 4px;
+dj-nav a:hover {
+    background: var(--electric-blue);
+    color: var(--deep-black);
+    box-shadow: 0 0 12px var(--electric-blue);
 }
 
-h2 {
-    margin-top: 10px;
-    font-weight: normal;
-    opacity: 0.8;
-}
-
+/* ============================================
+   TOPBAR
+   ============================================ */
 .topbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 15px 20px;
+    padding: 12px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     backdrop-filter: blur(10px);
+    background: rgba(5, 5, 5, 0.8);
+    border-bottom: 1px solid rgba(0, 191, 255, 0.3);
     z-index: 1000;
-
-    .topbar {
-        background: rgba(5, 5, 5, 0.8);
-        backdrop-filter: blur(15px);
-        border-bottom: 1px solid rgba(0, 191, 255, 0.3);
-    }
-
-    /* FIX */
-    box-sizing: border-box;
-
 }
 
-/* RIGHT SIDE LANG BUTTONS */
+.topbar .logo {
+    font-size: 20px;
+    margin: 0;
+}
+
 .lang {
     display: flex;
     gap: 8px;
@@ -100,59 +100,197 @@ h2 {
 .lang button {
     background: transparent;
     border: 1px solid var(--electric-blue);
-    color: white;
+    color: var(--white);
     border-radius: 10px;
-    transition: 0.3s;
+    padding: 4px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .lang button:hover {
     background: var(--electric-blue);
-    box-shadow: 0 0 20px var(--electric-blue);
-    color: black;
+    color: var(--deep-black);
+    box-shadow: 0 0 16px var(--electric-blue);
 }
 
-.lang button:hover {
-    background: #00fff2;
-    color: black;
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px 40px;
 }
 
-/* BUTTON */
-.btn {
+.hero-logo {
+    width: 200px;
+    max-width: 60%;
+    margin-bottom: 24px;
+    filter:
+        drop-shadow(0 0 10px #ff00aa)
+        drop-shadow(0 0 20px #ff00aa)
+        drop-shadow(0 0 20px #00aaff);
+    animation: glowPulse 3s infinite ease-in-out;
+}
+
+.glow {
+    color: var(--white);
+    text-shadow:
+        0 0 10px var(--electric-blue),
+        0 0 20px var(--neon-purple),
+        0 0 40px var(--neon-pink),
+        0 0 80px var(--neon-pink);
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.hero-sub {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-top: 12px;
+}
+
+.hero-cta {
     margin-top: 30px;
-    padding: 14px 24px;
+    padding: 12px 24px;
     background: #00fff2;
-    color: black;
+    color: var(--deep-black);
     font-weight: bold;
     border-radius: 8px;
     text-decoration: none;
     box-shadow: 0 0 20px #00fff2;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    font-size: 16px;
 }
 
-.btn:hover {
+.hero-cta:hover {
     transform: scale(1.05);
     box-shadow: 0 0 40px #00fff2;
 }
 
-/* SECTIONS */
+/* ============================================
+   SECTIONS / CARDS
+   ============================================ */
 section {
-    padding: 80px 20px;
+    padding: 60px 20px;
 }
 
-/* CARDS */
 .card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(0, 255, 242, 0.2);
-    padding: 20px;
+    padding: 24px;
     margin: 20px auto;
-    max-width: 500px;
+    max-width: 520px;
     border-radius: 12px;
     backdrop-filter: blur(10px);
 }
 
-/* FOOTER */
-footer {
-    padding: 40px;
-    opacity: 0.6;
+.card h2 {
+    margin-top: 0;
+    font-weight: normal;
+    opacity: 0.85;
+    font-size: 20px;
+}
+
+.card p {
+    opacity: 0.8;
+    line-height: 1.5;
     font-size: 14px;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn-dj {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #00fff2;
+    color: var(--deep-black);
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 0 20px #00fff2;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.btn-dj:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #00fff2;
+}
+
+.btn-dj-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    background: transparent;
+    color: var(--electric-blue);
+    font-weight: bold;
+    border: 1px solid var(--electric-blue);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.btn-dj-secondary:hover {
+    background: var(--electric-blue);
+    color: var(--deep-black);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+    padding: 30px 20px;
+    opacity: 0.7;
+    font-size: 13px;
+    margin-top: 40px;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes glowPulse {
+    0%, 100% {
+        filter:
+            drop-shadow(0 0 10px #ff00aa)
+            drop-shadow(0 0 20px #ff00aa)
+            drop-shadow(0 0 20px #00aaff);
+    }
+    50% {
+        filter:
+            drop-shadow(0 0 18px #ff00aa)
+            drop-shadow(0 0 30px #ff00aa)
+            drop-shadow(0 0 30px #00aaff);
+    }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 600px) {
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .lang {
+        margin-top: 4px;
+    }
+
+    .glow {
+        font-size: 32px;
+        letter-spacing: 2px;
+    }
+
+    .hero-logo {
+        width: 150px;
+    }
 }

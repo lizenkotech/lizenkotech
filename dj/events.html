@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | DJ Lizenko</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+        <a href="../index.html" class="logo">🎧 LZD•BEATS</a>
+        <div class="lang">
+            <button onclick="setLang('nl')">NL</button>
+            <button onclick="setLang('en')">EN</button>
+            <button onclick="setLang('fr')">FR</button>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:10px 0;">
+        <a href="index.html">Home</a>
+        <a href="about.html">Over mij</a>
+        <a href="events.html">Events</a>
+        <a href="gallery.html">Foto's</a>
+        <a href="requests/index.html">Verzoekjes</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <h1 class="glow" data-nl="COMING SOON" data-en="COMING SOON" data-fr="BIENTÔT"></h1>
+        <p class="hero-sub" data-nl="Events &amp; optredens" data-en="Events &amp; performances" data-fr="Événements &amp; spectacles"></p>
+    </header>
+
+    <!-- EVENT CARDS -->
+    <section>
+        <div class="card">
+            <h2 class="glow" data-nl="COMING SOON" data-en="COMING SOON" data-fr="BIENTÔT"></h2>
+            <p data-nl="Er zijn nog geen events gepland. Blijf kijken!" data-en="No events planned yet. Stay tuned!" data-fr="Pas d'événements prévus pour le moment. Restez à l'écoute!"></p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+        <a class="btn-dj" href="contact.html" data-nl="📩 Boeking Aanvragen" data-en="📩 Request a Booking" data-fr="📩 Demander une Réservation"></a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© <span id="year"></span> DJ Lizenko — LZD•BEATS</p>
+    </footer>
+
+    <!-- LANGUAGES + YEAR -->
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll("[data-nl]").forEach(el => {
+                el.innerText = el.getAttribute("data-" + lang);
+            });
+        }
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+        setLang("nl");
+    </script>
+
+</body>
+</html>

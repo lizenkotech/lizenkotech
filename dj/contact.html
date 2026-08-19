@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | DJ Lizenko</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="topbar">
+        <a href="../index.html" class="logo">🎧 LZD•BEATS</a>
+        <div class="lang">
+            <button onclick="setLang('nl')">NL</button>
+            <button onclick="setLang('en')">EN</button>
+            <button onclick="setLang('fr')">FR</button>
+        </div>
+    </div>
+
+    <nav style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:10px 0;">
+        <a href="index.html">Home</a>
+        <a href="about.html">Over mij</a>
+        <a href="events.html">Events</a>
+        <a href="gallery.html">Foto's</a>
+        <a href="requests/index.html">Verzoekjes</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <header class="hero">
+        <h1 class="glow" data-nl="CONTACT" data-en="CONTACT" data-fr="CONTACT"></h1>
+        <p class="hero-sub" data-nl="Neem contact op" data-en="Get in touch" data-fr="Contactez-moi"></p>
+    </header>
+
+    <section>
+        <div class="card">
+            <h2 class="glow" data-nl="BOEKING &amp; OPTREDEN" data-en="BOOKING &amp; PERFORMANCE" data-fr="RÉSERVATION &amp; SPECTACLE"></h2>
+
+            <p data-nl="Voor boekingsaanvragen, vragen of verzoekjes:" data-en="For booking requests, questions or song requests:" data-fr="Pour les demandes de réservation, questions ou demandes de morceaux:"></p>
+
+            <br>
+
+            <p data-nl="📧 Email: lizenkodj@example.com" data-en="📧 Email: lizenkodj@example.com" data-fr="📧 Email: lizenkodj@example.com"></p>
+
+            <br>
+
+            <p data-nl="Of gebruik de verzoekjespagina om liedjes aan te vragen tijdens een optreden." data-en="Or use the song request page to request songs during a performance." data-fr="Ou utilisez la page de demande de morceaux pour demander des chansons pendant un spectacle."></p>
+
+            <br>
+
+            <a class="btn-dj" href="requests/index.html" data-nl="🎶 VERZOEKJE DOEN" data-en="🎶 MAKE A REQUEST" data-fr="🎶 FAIRE UNE DEMANDE"></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© <span id="year"></span> DJ Lizenko — LZD•BEATS</p>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll("[data-nl]").forEach(el => {
+                el.innerText = el.getAttribute("data-" + lang);
+            });
+        }
+        document.getElementById("year").textContent = new Date().getFullYear();
+        setLang("nl");
+    </script>
+
+</body>
+</html>

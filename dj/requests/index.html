@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verzoekjes | DJ Lizenko</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Request form specific styles */
+        .request-form {
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        .request-form input,
+        .request-form textarea {
+            width: 100%;
+            padding: 12px 16px;
+            margin-bottom: 14px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(0,191,255,0.3);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        .request-form input::placeholder,
+        .request-form textarea::placeholder {
+            color: rgba(255,255,255,0.35);
+        }
+        .request-form input:focus,
+        .request-form textarea:focus {
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 10px rgba(0,191,255,0.15);
+        }
+        .request-form textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        .request-form .btn-dj {
+            width: 100%;
+            text-align: center;
+        }
+        .request-status {
+            margin-top: 16px;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            text-align: center;
+            display: none;
+        }
+        .request-status.success {
+            display: block;
+            background: rgba(34,180,60,0.2);
+            border: 1px solid rgba(34,180,60,0.4);
+            color: #7cff7c;
+        }
+        .request-status.error {
+            display: block;
+            background: rgba(220,40,40,0.2);
+            border: 1px solid rgba(220,40,40,0.4);
+            color: #ff7c7c;
+        }
+        .requests-list {
+            margin-top: 30px;
+            text-align: left;
+        }
+        .requests-list h3 {
+            font-size: 16px;
+            opacity: 0.8;
+            margin-bottom: 12px;
+        }
+        .request-entry {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(0,191,255,0.15);
+            border-radius: 6px;
+            padding: 10px 14px;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+        .request-entry .req-name {
+            color: var(--electric-blue);
+            font-weight: bold;
+        }
+        .request-entry .req-time {
+            opacity: 0.5;
+            font-size: 11px;
+            display: block;
+            margin-top: 4px;
+        }
+        .no-requests {
+            opacity: 0.5;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="topbar">
+        <a href="../index.html" class="logo">🎧 LZD•BEATS</a>
+        <div class="lang">
+            <button onclick="setLang('nl')">NL</button>
+            <button onclick="setLang('en')">EN</button>
+            <button onclick="setLang('fr')">FR</button>
+        </div>
+    </div>
+
+    <nav style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:10px 0;">
+        <a href="index.html">Home</a>
+        <a href="about.html">Over mij</a>
+        <a href="events.html">Events</a>
+        <a href="gallery.html">Foto's</a>
+        <a href="requests/index.html">Verzoekjes</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <header class="hero">
+        <h1 class="glow" data-nl="VERZOEKJES" data-en="SONG REQUESTS" data-fr="DEMANDES DE MORCEAUX"></h1>
+        <p class="hero-sub" data-nl="Stuur je verzoek voor de set" data-en="Send your request for the set" data-fr="Envoyez votre demande pour le set"></p>
+    </header>
+
+    <section>
+        <div class="card">
+            <div class="request-form">
+                <p class="glow" style="font-size:20px;opacity:0.9;margin-bottom:16px;text-align:center;" data-nl="Jouw verzoek" data-en="Your request" data-fr="Votre demande"></p>
+
+                <input type="text" id="reqName" placeholder="Jouw naam (optioneel)" data-nl-placeholder="Jouw naam (optioneel)" data-en-placeholder="Your name (optional)" data-fr-placeholder="Votre nom (optionnel)">
+
+                <textarea id="reqMsg" placeholder="Welk nummer wil je horen?" data-nl-placeholder="Welk nummer wil je horen?" data-en-placeholder="Which song do you want to hear?" data-fr-placeholder="Quelle chanson voulez-vous entendre?"></textarea>
+
+                <button class="btn-dj" onclick="submitRequest()">
+                    <span data-nl="VERSTUUR" data-en="SEND" data-fr="ENVOYER"></span>
+                </button>
+
+                <div id="status" class="request-status"></div>
+            </div>
+        </div>
+
+        <div class="card requests-list" id="requestsList">
+            <h3 class="glow" data-nl="RECENTE VERZOEKJES" data-en="RECENT REQUESTS" data-fr="DEMANDES RÉCENTES"></h3>
+            <div id="requestEntries"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© <span id="year"></span> DJ Lizenko — LZD•BEATS</p>
+        <p style="opacity:0.4;font-size:11px;margin-top:8px;" data-nl="Verzoekjes worden lokaal opgeslagen in je browser." data-en="Requests are stored locally in your browser." data-fr="Les demandes sont stockées localement dans votre navigateur."></p>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll("[data-nl]").forEach(el => {
+                el.innerText = el.getAttribute("data-" + lang);
+            });
+            // Update placeholders
+            const nameInput = document.getElementById("reqName");
+            const msgInput = document.getElementById("reqMsg");
+            nameInput.placeholder = nameInput.getAttribute("data-" + lang + "-placeholder");
+            msgInput.placeholder = msgInput.getAttribute("data-" + lang + "-placeholder");
+            // Update send button
+            const sendBtn = document.querySelector(".btn-dj span");
+            if (sendBtn) sendBtn.innerText = lang === "nl" ? "VERSTUUR" : lang === "en" ? "SEND" : "ENVOYER";
+        }
+
+        function getRequests() {
+            try {
+                return JSON.parse(localStorage.getItem("dj_requests") || "[]");
+            } catch(e) { return []; }
+        }
+
+        function saveRequest(name, msg) {
+            const requests = getRequests();
+            requests.push({
+                name: name || "Gast",
+                msg: msg,
+                time: new Date().toLocaleString()
+            });
+            // Keep max 50 entries
+            if (requests.length > 50) requests.splice(0, requests.length - 50);
+            localStorage.setItem("dj_requests", JSON.stringify(requests));
+        }
+
+        function renderRequests() {
+            const entries = document.getElementById("requestEntries");
+            const requests = getRequests();
+            if (requests.length === 0) {
+                entries.innerHTML = '<div class="no-requests">' +
+                    (currentLang === "nl" ? "Nog geen verzoekjes." :
+                     currentLang === "en" ? "No requests yet." :
+                     "Aucune demande pour le moment.") + '</div>';
+                return;
+            }
+            // Show newest first, max 10
+            const recent = requests.slice(-10).reverse();
+            entries.innerHTML = recent.map(r =>
+                '<div class="request-entry">' +
+                '<span class="req-name">' + escapeHtml(r.name) + '</span>' +
+                '<div>' + escapeHtml(r.msg) + '</div>' +
+                '<span class="req-time">' + r.time + '</span>' +
+                '</div>'
+            ).join("");
+        }
+
+        function escapeHtml(str) {
+            const div = document.createElement("div");
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        function submitRequest() {
+            const name = document.getElementById("reqName").value.trim();
+            const msg = document.getElementById("reqMsg").value.trim();
+            const status = document.getElementById("status");
+
+            if (!msg) {
+                status.className = "request-status error";
+                status.innerHTML = currentLang === "nl" ? "Vul een verzoek in." :
+                                   currentLang === "en" ? "Enter a request." :
+                                   "Entrez une demande.";
+                return;
+            }
+
+            saveRequest(name, msg);
+
+            status.className = "request-status success";
+            status.innerHTML = currentLang === "nl" ? "Verzoek ontvangen! 🎶" :
+                               currentLang === "en" ? "Request received! 🎶" :
+                               "Demande reçue ! 🎶";
+
+            document.getElementById("reqMsg").value = "";
+            setTimeout(() => { status.style.display = "none"; }, 4000);
+            renderRequests();
+        }
+
+        // Store current language for rendering
+        let currentLang = "nl";
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+        setLang("nl");
+
+        // Render existing requests on load
+        renderRequests();
+
+        // Override setLang to also re-render
+        const origSetLang = setLang;
+        setLang = function(lang) {
+            currentLang = lang;
+            origSetLang(lang);
+            renderRequests();
+        };
+    </script>
+
+</body>
+</html>

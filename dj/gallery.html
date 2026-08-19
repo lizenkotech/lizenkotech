@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foto's | DJ Lizenko</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="topbar">
+        <a href="../index.html" class="logo">🎧 LZD•BEATS</a>
+        <div class="lang">
+            <button onclick="setLang('nl')">NL</button>
+            <button onclick="setLang('en')">EN</button>
+            <button onclick="setLang('fr')">FR</button>
+        </div>
+    </div>
+
+    <nav style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:10px 0;">
+        <a href="index.html">Home</a>
+        <a href="about.html">Over mij</a>
+        <a href="events.html">Events</a>
+        <a href="gallery.html">Foto's</a>
+        <a href="requests/index.html">Verzoekjes</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <header class="hero">
+        <h1 class="glow" data-nl="FOTO'S" data-en="PHOTOS" data-fr="PHOTOS"></h1>
+        <p class="hero-sub" data-nl="Momenten van mijn sets" data-en="Moments from my sets" data-fr="Moments de mes sets"></p>
+    </header>
+
+    <section>
+        <div class="card">
+            <h2 class="glow" data-nl="COMING SOON" data-en="COMING SOON" data-fr="BIENTÔT"></h2>
+            <p data-nl="Foto's van mijn optredens worden hier geplaatst. Blijf kijken!" data-en="Photos from my performances will be posted here. Stay tuned!" data-fr="Les photos de mes spectacles seront publiées ici. Restez à l'écoute!"></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© <span id="year"></span> DJ Lizenko — LZD•BEATS</p>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll("[data-nl]").forEach(el => {
+                el.innerText = el.getAttribute("data-" + lang);
+            });
+        }
+        document.getElementById("year").textContent = new Date().getFullYear();
+        setLang("nl");
+    </script>
+
+</body>
+</html>
