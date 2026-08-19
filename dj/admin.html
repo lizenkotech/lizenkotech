@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | DJ Lizenko</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+        <a href="../index.html" class="logo">🎧 LZD•BEATS</a>
+        <div class="lang">
+            <button onclick="setLang('nl')">NL</button>
+            <button onclick="setLang('en')">EN</button>
+            <button onclick="setLang('fr')">FR</button>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav style="position:relative;z-index:1001;display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:10px 0;margin-top:55px;margin-bottom:20px;">
+        <a href="index.html">Home</a>
+        <a href="about.html">Over mij</a>
+        <a href="events.html">Events</a>
+        <a href="gallery.html">Foto's</a>
+        <a href="requests/index.html">Verzoekjes</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin.html" style="border-color:var(--neon-pink);color:var(--neon-pink);">Admin</a>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <h1 class="glow" data-nl="ADMIN" data-en="ADMIN" data-fr="ADMIN"></h1>
+        <p class="hero-sub" data-nl="Song Request Dashboard" data-en="Song Request Dashboard" data-fr="Tableau de bord des demandes"></p>
+    </header>
+
+    <!-- LOGIN FORM -->
+    <section class="card" style="max-width:380px;">
+        <h2 class="glow" data-nl="INLOGGEN" data-en="LOG IN" data-fr="SE CONNECTER"></h2>
+
+        <p data-nl="Geef het wachtwoord in om de verzoekjes te zien en te beheren." data-en="Enter the password to view and manage song requests." data-fr="Entrez le mot de passe pour voir et gérer les demandes."></p>
+
+        <form id="loginForm" style="margin-top:16px;">
+            <input type="password" id="adminPw" placeholder="Wachtwoord"
+                   data-nl-placeholder="Wachtwoord"
+                   data-en-placeholder="Password"
+                   data-fr-placeholder="Mot de passe"
+                   autocomplete="off"
+                   style="margin-bottom:12px;">
+            <button type="submit" class="btn-dj" data-nl="➡ LOGIN" data-en="➡ LOG IN" data-fr="➡ SE CONNECTER"></button>
+        </form>
+
+        <div id="loginStatus" class="form-status" style="margin-top:14px;display:none;"></div>
+
+        <p style="opacity:0.4;font-size:12px;margin-top:14px;" data-nl="Verzoekjes worden lokaal opgeslagen in je browser." data-en="Requests are stored locally in your browser." data-fr="Les demandes sont stockées localement dans votre navigateur."></p>
+    </section>
+
+    <!-- REQUESTS DASHBOARD (hidden until login) -->
+    <section id="dashboard" class="card" style="display:none;max-width:560px;">
+        <h2 class="glow" data-nl="VERZOEKJES" data-en="REQUESTS" data-fr="DEMANDES"></h2>
+
+        <div style="display:flex;gap:10px;justify-content:center;margin-bottom:16px;flex-wrap:wrap;">
+            <button class="btn-dj-secondary" id="btnMarkDone" data-nl="✔ Gemarkeerd als gespeeld" data-en="✔ Marked as played" data-fr="✔ Marqué comme joué"></button>
+            <button class="btn-dj-secondary" id="btnClearDone" data-nl="🗑 Alle gespeelde verwijderen" data-en="🗑 Clear all played" data-fr="🗑 Effacer tout joué"></button>
+        </div>
+
+        <div id="requestList">
+            <p class="no-requests" data-nl="Nog geen verzoekjes." data-en="No requests yet." data-fr="Aucune demande pour le moment."></p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© <span id="year"></span> DJ Lizenko — LZD•BEATS</p>
+    </footer>
+
+    <script>
+        /* ---- Language switcher ---- */
+        function setLang(lang) {
+            document.querySelectorAll("[data-nl]").forEach(el => {
+                el.innerText = el.getAttribute("data-" + lang);
+            });
+            const pwInput = document.getElementById("adminPw");
+            if (pwInput) {
+                pwInput.placeholder = pwInput.getAttribute("data-" + lang + "-placeholder");
+            }
+        }
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+        setLang("nl");
+
+        /* ---- Login logic (client-side only) ---- */
+        const ADMIN_PASSWORD = "admin123"; // Change this to your preferred password
+        const STORAGE_KEY = "dj_requests";
+        const LOGIN_KEY = "dj_admin_logged_in";
+
+        function getRequests() {
+            try {
+                return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function saveRequests(requests) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(requests));
+        }
+
+        function markRequestAsPlayed(name, song) {
+            const requests = getRequests();
+            const idx = requests.findIndex(r =>
+                r.name === name && r.song === song && !r.played
+            );
+            if (idx >= 0) {
+                requests[idx].played = true;
+                requests[idx].playedAt = new Date().toISOString();
+                saveRequests(requests);
+            }
+        }
+
+        function clearPlayedRequests() {
+            const requests = getRequests().filter(r => !r.played);
+            saveRequests(requests);
+        }
+
+        function renderRequests() {
+            const list = document.getElementById("requestList");
+            const requests = getRequests();
+            const pending = requests.filter(r => !r.played);
+            const played = requests.filter(r => r.played);
+
+            if (pending.length === 0 && played.length === 0) {
+                list.innerHTML = '<p class="no-requests">' +
+                    (currentLang === "nl" ? "Nog geen verzoekjes." :
+                     currentLang === "en" ? "No requests yet." :
+                     "Aucune demande pour le moment.") + '</p>';
+                return;
+            }
+
+            let html = "";
+
+            if (pending.length > 0) {
+                html += '<p style="opacity:0.6;font-size:13px;margin-bottom:8px;text-align:left;">' +
+                    (currentLang === "nl" ? "⏳ Nog te spelen:" :
+                     currentLang === "en" ? "⏳ Pending:" :
+                     "⏳ En attente:") + '</p>';
+                pending.forEach(r => {
+                    html += '<div class="request-entry" style="display:flex;justify-content:space-between;align-items:center;gap:10px;">' +
+                        '<div style="flex:1;text-align:left;">' +
+                            '<span class="req-by">' + escapeHtml(r.name) + '</span>' +
+                            '<div style="font-size:14px;margin-top:2px;">' + escapeHtml(r.song) + '</div>' +
+                            '<span class="req-time">' + formatTime(r.timestamp) + '</span>' +
+                        '</div>' +
+                        '<button class="mark-btn" data-name="' + escapeHtml(r.name) + '" data-song="' + escapeHtml(r.song) + '" ' +
+                        'style="background:var(--neon-pink);color:white;border:none;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:12px;" ' +
+                        'data-nl="✔" data-en="✔" data-fr="✔"></button>' +
+                    '</div>';
+                });
+            }
+
+            if (played.length > 0) {
+                html += '<p style="opacity:0.4;font-size:13px;margin:12px 0 8px;text-align:left;">' +
+                    (currentLang === "nl" ? "✅ Gespeeld:" :
+                     currentLang === "en" ? "✅ Played:" :
+                     "✅ Joué:") + '</p>';
+                played.slice(-5).reverse().forEach(r => {
+                    html += '<div class="request-entry" style="opacity:0.45;border-left-color:rgba(255,255,255,0.2);">' +
+                        '<span class="req-by">' + escapeHtml(r.name) + '</span>' +
+                        '<div>' + escapeHtml(r.song) + '</div>' +
+                        '<span class="req-time">' + formatTime(r.playedAt) + '</span>' +
+                    '</div>';
+                });
+            }
+
+            list.innerHTML = html;
+
+            // Attach mark-as-played handlers
+            list.querySelectorAll(".mark-btn").forEach(btn => {
+                btn.onclick = () => {
+                    markRequestAsPlayed(btn.getAttribute("data-name"), btn.getAttribute("data-song"));
+                    renderRequests();
+                };
+            });
+        }
+
+        function formatTime(iso) {
+            try {
+                const d = new Date(iso);
+                return d.toLocaleString(currentLang === "nl" ? "nl-NL" :
+                                        currentLang === "en" ? "en-US" : "fr-FR",
+                                        { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" });
+            } catch (e) {
+                return iso;
+            }
+        }
+
+        function escapeHtml(str) {
+            const div = document.createElement("div");
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        function currentLang() {
+            return document.documentElement.lang || "nl";
+        }
+        // Override: track current language
+        let currentLangValue = "nl";
+        const origSetLang = setLang;
+        setLang = function(lang) {
+            currentLangValue = lang;
+            origSetLang(lang);
+        };
+
+        /* ---- Login form handler ---- */
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const pw = document.getElementById("adminPw").value;
+            const status = document.getElementById("loginStatus");
+
+            if (pw === ADMIN_PASSWORD) {
+                localStorage.setItem(LOGIN_KEY, "true");
+                status.className = "form-status success";
+                status.innerHTML = currentLangValue === "nl" ? "Ingelogd! 🎧" :
+                                  currentLangValue === "en" ? "Logged in! 🎧" :
+                                  "Connecté ! 🎧";
+                status.style.display = "block";
+                document.getElementById("dashboard").style.display = "block";
+                document.getElementById("adminPw").value = "";
+                setTimeout(() => { status.style.display = "none"; }, 3000);
+                setTimeout(() => { renderRequests(); }, 100);
+            } else {
+                status.className = "form-status error";
+                status.innerHTML = currentLangValue === "nl" ? "Onjuist wachtwoord." :
+                                  currentLangValue === "en" ? "Wrong password." :
+                                  "Mot de passe incorrect.";
+                status.style.display = "block";
+                setTimeout(() => { status.style.display = "none"; }, 3000);
+            }
+        });
+
+        /* ---- Dashboard buttons ---- */
+        document.getElementById("btnMarkDone").addEventListener("click", () => {
+            // Mark all current pending as played
+            const requests = getRequests();
+            requests.forEach(r => {
+                if (!r.played) {
+                    r.played = true;
+                    r.playedAt = new Date().toISOString();
+                }
+            });
+            saveRequests(requests);
+            renderRequests();
+            // Show confirmation
+            const status = document.getElementById("loginStatus");
+            status.className = "form-status success";
+            status.innerHTML = currentLangValue === "nl" ? "Alle verzoekjes gemarkeerd als gespeeld." :
+                              currentLangValue === "en" ? "All requests marked as played." :
+                              "Toutes les demandes marquées comme jouées.";
+            status.style.display = "block";
+            setTimeout(() => { status.style.display = "none"; }, 3000);
+        });
+
+        document.getElementById("btnClearDone").addEventListener("click", () => {
+            clearPlayedRequests();
+            renderRequests();
+            const status = document.getElementById("loginStatus");
+            status.className = "form-status success";
+            status.innerHTML = currentLangValue === "nl" ? "Gespeelde verzoekjes verwijderd." :
+                              currentLangValue === "en" ? "Played requests cleared." :
+                              "Demandes jouées effacées.";
+            status.style.display = "block";
+            setTimeout(() => { status.style.display = "none"; }, 3000);
+        });
+
+        /* ---- Check if already logged in ---- */
+        if (localStorage.getItem(LOGIN_KEY) === "true") {
+            document.getElementById("dashboard").style.display = "block";
+            renderRequests();
+        }
+    </script>
+
+</body>
+</html>
