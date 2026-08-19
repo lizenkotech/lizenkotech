@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Over DJ Revaya</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle at top, #301858, #050308);
+            color: #f5f5f5;
+        }
+
+        a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+
+        header {
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.6);
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(8px);
+            z-index: 10;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        nav a {
+            margin-left: 16px;
+            font-size: 14px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px 16px 40px;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.55);
+            border-radius: 16px;
+            padding: 18px;
+            box-shadow: 0 0 18px rgba(0, 0, 0, 0.7);
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .col {
+            flex: 1;
+            min-width: 240px;
+        }
+
+        ul {
+            padding-left: 18px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 16px;
+            font-size: 12px;
+            background: rgba(0, 0, 0, 0.7);
+            margin-top: 24px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                margin-top: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">DJ lizenko</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">Over mij</a>
+            <a href="events.html">Events</a>
+            <a href="gallery.html">Foto's</a>
+            <a href="requests/index.html">Verzoekjes</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Over DJ lizenko</h1>
+        <div class="card">
+            <div class="row">
+                <div class="col">
+                    <p>
+                        Ik ben <strong>DJ lizenko</strong>, een allround café-DJ met een hart voor
+                        mainstream pop, hedendaagse linedance-hits en gezellige feestmuziek.
+                    </p>
+                    <p>
+                        Tijdens <strong>Café Avond</strong> draait alles rond sfeer, meezingen en
+                        samen plezier maken. Geen zware hardcore, metal of harde rap; wel nummers waar
+                        iedereen zich goed bij voelt.
+                    </p>
+                </div>
+                <div class="col">
+                    <h3>Stijlen die je vaak hoort</h3>
+                    <ul>
+                        <li>Mainstream pop & radiohits</li>
+                        <li>Linedance nummers (Indianendans, Pizza Hut, enz.)</li>
+                        <li>Klassieke café meezingers</li>
+                        <liParty & dance tracks die voor een volle dansvloer zorgen</li>
+                    </ul>
+                </div>
+            </div>
+            <h3>Wat maakt mijn sets uniek?</h3>
+            <ul>
+                <li>Ik luister echt naar het publiek – verzoekjes zijn welkom.</li>
+                <li>Ik bouw de avond rustig op en eindig met volle energie.</li>
+                <li>Ik probeer een balans te vinden voor jong én oud.</li>
+            </ul>
+            <p>
+                Via de <a href="requests/index.html">verzoekjespagina</a> kunnen mensen tijdens de avond liedjes
+                aanvragen
+                of feedback geven over de sfeer en het volume. Zo maken we samen de perfecte café-ervaring.
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        © <span id="year"></span> DJ lizenko – Café Avond
+    </footer>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

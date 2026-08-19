@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ Lizenko</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<div class="logo">🎧 LZD•BEATS</div>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">Over mij</a>
+    <a href="events.html">Events</a>
+    <a href="gallery.html">Foto's</a>
+    <a href="requests/index.html">Verzoekjes</a>
+    <a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<body>
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+        <div>🎧 LZD•BEATS</div>
+
+        <div class="lang">
+            <button onclick="setLang('nl')">NL</button>
+            <button onclick="setLang('en')">EN</button>
+            <button onclick="setLang('fr')">FR</button>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <header class="hero">
+        <header class="hero">
+
+            <img src="assets/images/logo.png" alt="LZD Beats Logo" class="hero-logo">
+
+            <p>Events • Clubs • Festivals</p>
+
+        </header>
+        <h1 class="glow" data-nl="DJ LIZENKO 🎶  DJ Daradinio" data-en="DJ LIZENKO" data-fr="DJ LIZENKO"></h1>
+
+        <p data-nl="DJ voor events • clubs • parties" data-en="DJ for events • clubs • parties"
+            data-fr="DJ pour événements • clubs • soirées">
+        </p>
+
+        <a class="btn" href="request.html" data-nl="🎶 NUMMER AANVRAGEN" data-en="🎶 REQUEST A SONG"
+            data-fr="🎶 DEMANDER UN MORCEAU">
+        </a>
+
+    </header>
+
+    <!-- BOOKING -->
+    <section class="card">
+
+        <h2 class="glow" data-nl="BOEKING" data-en="BOOKING" data-fr="RÉSERVATION"></h2>
+
+
+
+    </section>
+
+    <!-- INFO -->
+    <section class="card">
+
+        <h2 class="glow" data-nl="INFO" data-en="INFO" data-fr="INFOS"></h2>
+
+        <p data-nl="🎛️ DJ controller setup" data-en="🎛️ DJ controller setup" data-fr="🎛️ Setup contrôleur DJ"></p>
+
+        <p data-nl="🔊 Werkt op bestaande geluidsinstallatie" data-en="🔊 Works on existing sound system"
+            data-fr="🔊 Fonctionne avec le système son existant"></p>
+
+        <p data-nl="🎶 Requests mogelijk" data-en="🎶 Requests available" data-fr="🎶 Demandes possibles"></p>
+
+    </section>
+
+    <!-- QR -->
+    <section class="card">
+
+        <h2 class="glow" data-nl="SCAN QR VOOR REQUESTS" data-en="SCAN QR FOR REQUESTS"
+            data-fr="SCANNE LE QR POUR LES DEMANDES"></h2>
+
+        <p data-nl="Scan om nummers aan te vragen" data-en="Scan to request songs live"
+            data-fr="Scanne pour demander des morceaux en live">
+        </p>
+
+        <img src="qr.png" style="width:200px; margin-top:20px;">
+
+    </section>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll("[data-nl]").forEach(el => {
+                el.innerText = el.getAttribute("data-" + lang);
+            });
+        }
+
+        // default language
+        setLang("nl");
+    </script>
+
+</body>
+
+</html>

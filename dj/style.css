@@ -1,0 +1,158 @@
+/* GENERAL */
+
+:root {
+    --electric-blue: #00BFFF;
+    --neon-purple: #8A2BE2;
+    --neon-pink: #FF1493;
+    --deep-black: #050505;
+    --dark-bg: #121212;
+    --white: #F5F5F5;
+}
+
+body {
+    margin: 0;
+    padding-top: 70px;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top,
+            #121212 0%,
+            #050505 100%);
+    color: var(--white);
+    text-align: center;
+}
+
+.hero-logo {
+    width: 250px;
+    max-width: 80%;
+    margin-bottom: 30px;
+
+    filter:
+        drop-shadow(0 0 10px #ff00aa) drop-shadow(0 0 20px #ff00aa) drop-shadow(0 0 20px #00aaff);
+
+    animation: glowPulse 3s infinite ease-in-out;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* NEON TEXT */
+.glow {
+    color: white;
+    text-shadow:
+        0 0 10px var(--electric-blue),
+        0 0 20px var(--neon-purple),
+        0 0 40px var(--neon-pink),
+        0 0 80px var(--neon-pink);
+}
+
+/* TITLE */
+h1 {
+    font-size: 60px;
+    margin: 0;
+    letter-spacing: 4px;
+}
+
+h2 {
+    margin-top: 10px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+
+    .topbar {
+        background: rgba(5, 5, 5, 0.8);
+        backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(0, 191, 255, 0.3);
+    }
+
+    /* FIX */
+    box-sizing: border-box;
+
+}
+
+/* RIGHT SIDE LANG BUTTONS */
+.lang {
+    display: flex;
+    gap: 8px;
+}
+
+.lang button {
+    background: transparent;
+    border: 1px solid var(--electric-blue);
+    color: white;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.lang button:hover {
+    background: var(--electric-blue);
+    box-shadow: 0 0 20px var(--electric-blue);
+    color: black;
+}
+
+.lang button:hover {
+    background: #00fff2;
+    color: black;
+}
+
+/* BUTTON */
+.btn {
+    margin-top: 30px;
+    padding: 14px 24px;
+    background: #00fff2;
+    color: black;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 0 20px #00fff2;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #00fff2;
+}
+
+/* SECTIONS */
+section {
+    padding: 80px 20px;
+}
+
+/* CARDS */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 242, 0.2);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+/* FOOTER */
+footer {
+    padding: 40px;
+    opacity: 0.6;
+    font-size: 14px;
+}
