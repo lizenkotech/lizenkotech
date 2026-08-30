@@ -13,7 +13,6 @@ I'm a developer focused on building, learning, and improving through practical p
 * 🌐 HTML & CSS
 * ⚡ JavaScript
 * 🖥️ Responsive Web Design
-* 🍓 Raspberry Pi & Hardware Projects
 * 🔧 Software & Systems
 
 ### 🚀 LIZENKO.tech
