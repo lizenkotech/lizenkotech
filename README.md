@@ -21,6 +21,19 @@ I'm a developer focused on building, learning, and improving through practical p
 **LIZENKO.tech** is my personal development portfolio, created to showcase my projects, technical skills, and work in web development.
 
 🔗 **Portfolio:** [LIZENKO.tech]([https://lizenko.tech](https://lizenko.netlify.app/projects)
+### 🐍 Python Projects
+
+I've been learning Python by building practical projects and applying what I learn.
+
+* 📋 **[Python Task Manager](https://github.com/lizenkotech/python-task-manager)**
+  A command-line task manager with persistent JSON storage, task completion, and deletion.
+
+* 🌤️ **[Python Weather App](https://github.com/lizenkotech/python-weather-app)**
+  A weather application using the Open-Meteo APIs to search for cities and display current weather data.
+
+* 💰 **[Python Expense Tracker](https://github.com/lizenkotech/python-expense-tracker)**
+  A command-line expense tracker using Pandas and CSV files to record, analyse, and summarise spending.
+
 
 ### ⚙️ My Approach
 
