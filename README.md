@@ -48,15 +48,41 @@ I believe the best way to learn development is by building real projects, experi
 * 🍓 Exploring Raspberry Pi and hardware projects
 * 🚀 Working toward full-stack development
 
-  ### 🚀 LIZENKO.tech
-
-**LIZENKO.tech** is my personal development portfolio, created to showcase my projects, technical skills, and work in web development.
-
-🔗 **Portfolio:** [LIZENKO.tech]([https://lizenko.tech](https://lizenko.netlify.app/projects)
-### 🐍 Python Projects
+# 🧑‍💻 The Odin Project — Foundations
 
 My progress through **[The Odin Project — Foundations](https://www.theodinproject.com/paths/foundations)**.
 
+This repository contains my exercises, projects, experiments, and notes as I learn the fundamentals of web development.
+
+I'm using this repository to document my progress and build a portfolio of the projects I create throughout the Foundations course.
+
+---
+
+## 🚀 Projects
+
+| #  | Project                                                    | Technologies          | Live Demo                                                       | Status         |
+| -- | ---------------------------------------------------------- | --------------------- | --------------------------------------------------------------- | -------------- |
+| 01 | [🍳 Recipes](./01-Project-Recipes/)                        | HTML, CSS             | —                                                               | ✅ Completed    |
+| 02 | [🌊 Landing Page](./02-Project-Landing-Page/)              | HTML, CSS, JavaScript | [🌐 Live Demo](https://lizenkotech.github.io/odin-foundations/) | ✅ Completed    |
+| 03 | [✊ Rock Paper Scissors](./03-Project-Rock-Paper-Scissors/) | HTML, JavaScript      | —                                                               | 🚧 In progress |
+| 04 | [🎨 Etch-a-Sketch](./04-Project-Etch-a-Sketch/)            | HTML, CSS, JavaScript | —                                                               | ⏳ Not started  |
+| 05 | [🧮 Calculator](./05-Project-Calculator/)                  | HTML, CSS, JavaScript | —                                                               | ⏳ Not started  |
+
+---
+
+## 📚 Exercises
+
+### HTML
+
+* [HTML Boilerplate](./html-boilerplate/)
+* [Links and Images](./odin-links-and-images/)
+
+### CSS
+
+* CSS exercises and practice
+* [CSS Exercises](./css-exercises-main%202%20repository's/)
+
+---
 ---
 
 © 2026 **LIZENKO.tech** — All rights reserved.
