@@ -48,6 +48,13 @@ I believe the best way to learn development is by building real projects, experi
 * 🍓 Exploring Raspberry Pi and hardware projects
 * 🚀 Working toward full-stack development
 
+  ### 🚀 LIZENKO.tech
+
+**LIZENKO.tech** is my personal development portfolio, created to showcase my projects, technical skills, and work in web development.
+
+🔗 **Portfolio:** [LIZENKO.tech]([https://lizenko.tech](https://lizenko.netlify.app/projects)
+### 🐍 Python Projects
+
 My progress through **[The Odin Project — Foundations](https://www.theodinproject.com/paths/foundations)**.
 
 ---
