@@ -48,6 +48,8 @@ I believe the best way to learn development is by building real projects, experi
 * 🍓 Exploring Raspberry Pi and hardware projects
 * 🚀 Working toward full-stack development
 
+My progress through **[The Odin Project — Foundations](https://www.theodinproject.com/paths/foundations)**.
+
 ---
 
 © 2026 **LIZENKO.tech** — All rights reserved.
