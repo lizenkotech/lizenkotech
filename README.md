@@ -70,19 +70,4 @@ I'm using this repository to document my progress and build a portfolio of the p
 
 ---
 
-## 📚 Exercises
-
-### HTML
-
-* [HTML Boilerplate](./html-boilerplate/)
-* [Links and Images](./odin-links-and-images/)
-
-### CSS
-
-* CSS exercises and practice
-* [CSS Exercises](./css-exercises-main%202%20repository's/)
-
----
----
-
 © 2026 **LIZENKO.tech** — All rights reserved.
