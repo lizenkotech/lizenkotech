@@ -30,7 +30,7 @@ I've been learning Python by building practical projects and applying what I lea
 
 **LIZENKO.tech** is my personal development portfolio, created to showcase my projects, technical skills, and work in web development.
 
-🔗 **Portfolio:** [LIZENKO.tech](https://lizenko.tech)
+🌐 Portfolio: LIZENKO.tech
 
 ## ⚙️ My Approach
 
