@@ -5,6 +5,14 @@
 🇧🇪 Belgium | 27
 
 I'm a developer focused on building, learning, and improving through practical projects. I'm interested in software development, programming, web technologies, and computer systems.
+## 🐍 Python Projects
+
+I've been learning Python by building practical projects and applying what I learn.
+
+- 🐍 **[Snake Game Python](https://github.com/lizenkotech/Snake-Game-Python)** — A simple terminal-based Snake game built with Python, featuring food, scoring, and keyboard controls.
+- 📋 **Python Task Manager** — A command-line task manager with persistent JSON storage, task completion, and deletion.
+- 🌤️ **Python Weather App** — A weather application using the Open-Meteo API to search for cities and display current weather data.
+- 💰 **Python Expense Tracker** — A command-line expense tracker using Pandas and CSV files to record, analyse, and summarise spending.
 
 ### 🛠️ What I Work With
 
