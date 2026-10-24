@@ -64,16 +64,6 @@ This repository contains my exercises, projects, experiments, and notes as I lea
 
 I'm using this repository to document my progress and build a portfolio of the projects I create throughout the Foundations course.
 
-## 🚀 Projects
 
-| # | Project | Technologies | Live Demo | Status |
-|---|---|---|---|---|
-| 01 | [🍳 Recipes](https://github.com/lizenkotech/lizenkotech/tree/main/01-Project-Recipes) | HTML, CSS | — | ✅ Completed |
-| 02 | [🌊 Landing Page](https://github.com/lizenkotech/lizenkotech/tree/main/02-Project-Landing-Page) | HTML, CSS, JavaScript | [🌐 Live Demo](https://lizenkotech.github.io/odin-foundations/) | ✅ Completed |
-| 03 | [✊ Rock Paper Scissors](https://github.com/lizenkotech/lizenkotech/tree/main/03-Project-Rock-Paper-Scissors) | HTML, JavaScript | — | 🚧 In progress |
-| 04 | [🎨 Etch-a-Sketch](https://github.com/lizenkotech/lizenkotech/tree/main/04-Project-Etch-a-Sketch) | HTML, CSS, JavaScript | — | ⏳ Not started |
-| 05 | [🧮 Calculator](https://github.com/lizenkotech/lizenkotech/tree/main/05-Project-Calculator) | HTML, CSS, JavaScript | — | ⏳ Not started |
-
----
 
 © 2026 **LIZENKO.tech** — All rights reserved.
