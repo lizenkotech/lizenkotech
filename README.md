@@ -8,14 +8,22 @@ I'm a developer focused on building, learning, and improving through practical p
 
 ---
 
-## 🐍 Python Projects
 
-I've been learning Python by building practical projects and applying what I learn.
+## 🚀 Projects
 
-- 🐍 [**Snake Game Python**](https://github.com/lizenkotech/Snake-Game-Python) — A simple terminal-based Snake game built with Python, featuring food, scoring, and keyboard controls.
-- 📋 [**Python Task Manager**](https://github.com/lizenkotech/python-task-manager) — A command-line task manager with persistent JSON storage, task completion, and deletion.
-- 🌤️ [**Python Weather App**](https://github.com/lizenkotech/python-weather-app) — A weather application using the Open-Meteo API to search for cities and display current weather data.
-- 💰 [**Python Expense Tracker**](https://github.com/lizenkotech/python-expense-tracker) — A command-line expense tracker using Pandas and CSV files to record, analyse, and summarise spending.
+| # | Project | Technologies | Live Demo | Status |
+|---|---|---|---|---|
+| 01 | 🍳 [Recipes](https://github.com/lizenkotech/odin-foundations/tree/main/01-Project-Recipes) | HTML, CSS | [🌐 Live Demo](https://lizenkotech.github.io/odin-foundations/01-Project-Recipes/index.html) | ✅ Completed |
+| 02 | 🌊 [Landing Page](https://github.com/lizenkotech/odin-foundations/tree/main/02-Project-Landing-Page) | HTML, CSS | [🌐 Live Demo](https://lizenkotech.github.io/odin-foundations/02-Project-Landing-Page/index.html) | ✅ Completed |
+| 03 | ✊ [Rock Paper Scissors](https://github.com/lizenkotech/odin-foundations/tree/main/03-Project-Rock-Paper-Scissors) | HTML, JavaScript | [🌐 Live Demo](https://lizenkotech.github.io/odin-foundations/03-Project-Rock-Paper-Scissors/) | 🚧 In progress |
+| 04 | 🎨 Etch-a-Sketch | HTML, CSS, JavaScript | — | ⏳ Not started |
+| 05 | 🧮 [Calculator](https://github.com/lizenkotech/odin-foundations/tree/main/05-Project-Calculator) | HTML, CSS, JavaScript | — | ⏳ Not started |
+
+### 📚 Exercises
+
+- 🖼️ [HTML — Links and Images](https://github.com/lizenkotech/odin-foundations/tree/main/odin-links-and-images) — [🌐 Live Demo](https://lizenkotech.github.io/odin-foundations/odin-links-and-images/)
+- 🧱 [HTML Boilerplate](https://github.com/lizenkotech/odin-foundations/tree/main/html-boilerplate)
+
 
 ## 🛠️ What I Work With
 
